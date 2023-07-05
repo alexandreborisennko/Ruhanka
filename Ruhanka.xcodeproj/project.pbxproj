@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E91FA2A54388A00233723 /* AppDelegate.swift */; };
 		041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E91FC2A54388A00233723 /* SceneDelegate.swift */; };
-		041E91FF2A54388A00233723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E91FE2A54388A00233723 /* ViewController.swift */; };
+		041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E91FE2A54388A00233723 /* AuthorizationVC.swift */; };
 		041E92022A54388A00233723 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041E92002A54388A00233723 /* Main.storyboard */; };
 		041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 041E92032A54388A00233723 /* Ruhanka.xcdatamodeld */; };
 		041E92072A54388C00233723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041E92062A54388C00233723 /* Assets.xcassets */; };
 		041E920A2A54388C00233723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041E92082A54388C00233723 /* LaunchScreen.storyboard */; };
+		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041E91F72A54388A00233723 /* Ruhanka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ruhanka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041E91FA2A54388A00233723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		041E91FC2A54388A00233723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		041E91FE2A54388A00233723 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		041E91FE2A54388A00233723 /* AuthorizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationVC.swift; sourceTree = "<group>"; };
 		041E92012A54388A00233723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		041E92042A54388A00233723 /* Ruhanka.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ruhanka.xcdatamodel; sourceTree = "<group>"; };
 		041E92062A54388C00233723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041E92092A54388C00233723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041E920B2A54388C00233723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				041E91FA2A54388A00233723 /* AppDelegate.swift */,
+				04558DE72A55A2E60029EFF0 /* Controllers */,
 				041E91FC2A54388A00233723 /* SceneDelegate.swift */,
-				041E91FE2A54388A00233723 /* ViewController.swift */,
 				041E92002A54388A00233723 /* Main.storyboard */,
 				041E92062A54388C00233723 /* Assets.xcassets */,
 				041E92082A54388C00233723 /* LaunchScreen.storyboard */,
@@ -68,6 +70,15 @@
 				041E92032A54388A00233723 /* Ruhanka.xcdatamodeld */,
 			);
 			path = Ruhanka;
+			sourceTree = "<group>";
+		};
+		04558DE72A55A2E60029EFF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
+				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041E91FF2A54388A00233723 /* ViewController.swift in Sources */,
+				041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */,
 				041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */,
+				04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */,
 				041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */,
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,
 			);
@@ -300,7 +312,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +342,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

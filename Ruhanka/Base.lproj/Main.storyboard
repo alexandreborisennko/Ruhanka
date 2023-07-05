@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WcT-r0-wvx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWB-Om-YF0">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
         <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Ruhanka" id="BYZ-38-t0r" userLabel="Authorization" customClass="ViewController" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ruhanka" id="BYZ-38-t0r" userLabel="Authorization" customClass="AuthorizationVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +95,9 @@
                                                     </attributedString>
                                                     <color key="baseBackgroundColor" name="Pink"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="OWB-Om-YF0" kind="show" id="OnM-RZ-S8k"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -137,18 +141,104 @@
         <!--AccountRegistration-->
         <scene sceneID="AXd-1i-ycn">
             <objects>
-                <viewController id="OWB-Om-YF0" userLabel="AccountRegistration" sceneMemberID="viewController">
+                <viewController id="OWB-Om-YF0" userLabel="AccountRegistration" customClass="EmailRegistrationVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAz-Aq-bpL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="84" translatesAutoresizingMaskIntoConstraints="NO" id="Afy-cX-Pnd">
+                                <rect key="frame" x="20" y="125" width="353" height="510"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nf1-Ox-g5T">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="35"/>
+                                        <color key="backgroundColor" name="Light grey"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnB-oG-XKF">
+                                        <rect key="frame" x="0.0" y="119" width="353" height="34"/>
+                                        <color key="backgroundColor" name="Light grey"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ім'я" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-yA-rWh">
+                                        <rect key="frame" x="0.0" y="237" width="353" height="35"/>
+                                        <color key="backgroundColor" name="Light grey"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" textContentType="given-name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамілія" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8c-kf-cz5">
+                                        <rect key="frame" x="0.0" y="356" width="353" height="35"/>
+                                        <color key="backgroundColor" name="Light grey"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Дата народження" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAA-yK-JuE">
+                                        <rect key="frame" x="0.0" y="475" width="353" height="35"/>
+                                        <color key="backgroundColor" name="Light grey"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rct-gk-bAx">
+                                <rect key="frame" x="16" y="679" width="41" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="checkbox_unselected"/>
+                                <state key="disabled" image="checkbox_unselected"/>
+                                <state key="selected" image="checkbox_selected"/>
+                                <connections>
+                                    <action selector="checkBoxPressed:" destination="OWB-Om-YF0" eventType="touchUpInside" id="0eh-2F-qH2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPZ-bn-qcT">
+                                <rect key="frame" x="65" y="659" width="312" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Продовжуючи, ви приймаєте умови Політіки 
+Приватності та Умови використання</string>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRp-ye-1Hk">
+                                <rect key="frame" x="20" y="746" width="353" height="71.333333333333258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Зареєструватись">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                <font key="NSOriginalFont" size="11" name="AppleBraille-Outline6Dot"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" name="Pink"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="N2H-MO-UsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Afy-cX-Pnd" firstAttribute="leading" secondItem="N2H-MO-UsA" secondAttribute="leading" constant="20" id="MKs-S2-1il"/>
+                            <constraint firstItem="N2H-MO-UsA" firstAttribute="trailing" secondItem="Afy-cX-Pnd" secondAttribute="trailing" constant="20" id="ZvL-Fu-O5p"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="irT-h2-pao"/>
+                    <navigationItem key="navigationItem" title="Створити ваш профіль" style="editor" id="irT-h2-pao"/>
+                    <connections>
+                        <outlet property="birthDateOutlet" destination="UAA-yK-JuE" id="gvU-4n-fFr"/>
+                        <outlet property="emailFieldOutlet" destination="nf1-Ox-g5T" id="0Ia-rn-RHD"/>
+                        <outlet property="nameOutlet" destination="xGB-yA-rWh" id="UZm-oQ-oGn"/>
+                        <outlet property="passwordOutlet" destination="MnB-oG-XKF" id="9hO-ko-mwA"/>
+                        <outlet property="surnameOutlet" destination="g8c-kf-cz5" id="HjE-zM-Qls"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-Ah-AtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="806"/>
+            <point key="canvasLocation" x="971.7557251908396" y="800.70422535211276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="feH-SK-EM0">
@@ -172,10 +262,15 @@
     <resources>
         <image name="apple" width="21" height="24.666666030883789"/>
         <image name="backgroundAutherisationPage" width="394.66665649414062" height="453.33334350585938"/>
+        <image name="checkbox_selected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="checkbox_unselected" width="33.333332061767578" height="33.333332061767578"/>
         <image name="facebook" width="25" height="25"/>
         <image name="logo" width="633" height="632"/>
+        <namedColor name="Light grey">
+            <color red="0.91764705882352937" green="0.92941176470588238" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Pink">
-            <color red="1" green="0.0" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.0" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
