@@ -1,24 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WcT-r0-wvx">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ruhanka" id="BYZ-38-t0r" userLabel="Authorization" customClass="ViewController" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundAutherisationPage" translatesAutoresizingMaskIntoConstraints="NO" id="uGN-4J-whZ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PBH-pL-Gqr">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3g-zC-G15">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="238.33333333333334"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="GaP-bW-Ct0">
+                                                <rect key="frame" x="8" y="-25" width="146" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="GaP-bW-Ct0"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-Ne-Crb">
+                                        <rect key="frame" x="0.0" y="238.33333333333331" width="393" height="238.33333333333331"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-6e-Xdv">
+                                        <rect key="frame" x="0.0" y="476.66666666666657" width="393" height="238.33333333333331"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-mL-J6a">
+                                                <rect key="frame" x="20" y="0.0" width="353" height="71.333333333333329"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="apple" imagePadding="10" cornerStyle="capsule" titleAlignment="center">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Продовжити з Apple">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alignImageToLeft" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amu-8P-ZrF">
+                                                <rect key="frame" x="20" y="83.333333333333371" width="353" height="71.666666666666686"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="leading" imagePadding="10" cornerStyle="capsule">
+                                                    <imageReference key="image" image="facebook" symbolScale="medium"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Продовжити з Facebook">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseBackgroundColor" red="0.0" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C15-AS-JoB">
+                                                <rect key="frame" x="20" y="167" width="353" height="71.333333333333314"/>
+                                                <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Продовжити з Email">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="baseBackgroundColor" name="Pink"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nGJ-mL-J6a" secondAttribute="trailing" constant="20" id="1hx-cH-FpZ"/>
+                                            <constraint firstItem="Amu-8P-ZrF" firstAttribute="leading" secondItem="sWE-6e-Xdv" secondAttribute="leading" constant="20" id="Kn7-o3-VnD"/>
+                                            <constraint firstAttribute="trailing" secondItem="C15-AS-JoB" secondAttribute="trailing" constant="20" id="SG8-r9-i9U"/>
+                                            <constraint firstAttribute="trailing" secondItem="Amu-8P-ZrF" secondAttribute="trailing" constant="20" id="ibi-Ly-YLp"/>
+                                            <constraint firstItem="nGJ-mL-J6a" firstAttribute="leading" secondItem="sWE-6e-Xdv" secondAttribute="leading" constant="20" id="o46-EE-LCY"/>
+                                            <constraint firstItem="C15-AS-JoB" firstAttribute="leading" secondItem="sWE-6e-Xdv" secondAttribute="leading" constant="20" id="rr3-Zt-oPr"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uGN-4J-whZ" secondAttribute="bottom" id="SmN-EB-CWa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBH-pL-Gqr" secondAttribute="bottom" id="T7x-hg-Ar5"/>
+                            <constraint firstItem="uGN-4J-whZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WF7-hP-HNr"/>
+                            <constraint firstItem="PBH-pL-Gqr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YZA-Tl-u40"/>
+                            <constraint firstItem="PBH-pL-Gqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aPb-N7-Hgc"/>
+                            <constraint firstItem="uGN-4J-whZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o3w-HN-Ivp"/>
+                            <constraint firstAttribute="trailing" secondItem="uGN-4J-whZ" secondAttribute="trailing" id="tCx-Aj-dst"/>
+                            <constraint firstItem="PBH-pL-Gqr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uKs-3F-xWt"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rWH-uL-s6v">
+                        <barButtonItem key="rightBarButtonItem" title="Увійти" style="done" id="tx0-Ga-sVW">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="appleButton" destination="nGJ-mL-J6a" id="GUw-bZ-BZZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
+        </scene>
+        <!--AccountRegistration-->
+        <scene sceneID="AXd-1i-ycn">
+            <objects>
+                <viewController id="OWB-Om-YF0" userLabel="AccountRegistration" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eAz-Aq-bpL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="N2H-MO-UsA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="irT-h2-pao"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-Ah-AtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="806"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="feH-SK-EM0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcT-r0-wvx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dIe-0v-QyH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m7a-Ax-ZnQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4o-SY-Iuq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="apple" width="21" height="24.666666030883789"/>
+        <image name="backgroundAutherisationPage" width="394.66665649414062" height="453.33334350585938"/>
+        <image name="facebook" width="25" height="25"/>
+        <image name="logo" width="633" height="632"/>
+        <namedColor name="Pink">
+            <color red="1" green="0.0" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
