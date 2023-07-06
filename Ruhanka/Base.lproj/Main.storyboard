@@ -122,6 +122,9 @@
                                     </attributedString>
                                     <color key="baseBackgroundColor" name="Pink"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButton:" destination="toz-j1-1pt" eventType="touchUpInside" id="Uxd-Ih-Qza"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpZ-iX-kKP">
                                 <rect key="frame" x="128" y="480" width="137" height="29"/>
@@ -162,6 +165,10 @@
                             <constraint firstItem="xEn-47-bol" firstAttribute="bottom" secondItem="GLs-3S-ISb" secondAttribute="bottom" constant="20" id="yTS-X5-75J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailOutlet" destination="GHI-C6-htz" id="BIA-I8-nHe"/>
+                        <outlet property="passwordOutlet" destination="db8-9Y-oz4" id="wf3-pc-kq4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kt-ku-Lk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -459,7 +466,7 @@
         <image name="facebook" width="25" height="25"/>
         <image name="logo" width="633" height="632"/>
         <namedColor name="Dark Grey">
-            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.59200000762939453" green="0.59200000762939453" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Light grey">
             <color red="0.9179999828338623" green="0.92900002002716064" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
