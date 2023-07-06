@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="toz-j1-1pt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OWB-Om-YF0">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -86,7 +86,7 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db8-9Y-oz4">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db8-9Y-oz4" customClass="FMSecureTextField" customModule="FMSecureTextField">
                                 <rect key="frame" x="20" y="405" width="353" height="55"/>
                                 <color key="backgroundColor" name="Light grey"/>
                                 <constraints>
@@ -94,6 +94,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="secureTypeImage" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="showImage" value="eye.fill" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="hideImage" value="eye.slash" catalog="system"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee5-Eq-Ki0">
                                 <rect key="frame" x="47" y="685.66666666666663" width="299.33333333333331" height="32.333333333333371"/>
@@ -321,7 +326,7 @@
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnB-oG-XKF">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnB-oG-XKF" customClass="FMSecureTextField" customModule="FMSecureTextField">
                                         <rect key="frame" x="0.0" y="75" width="353" height="55"/>
                                         <color key="backgroundColor" name="Light grey"/>
                                         <constraints>
@@ -329,6 +334,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="secureTypeImage" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="showImage" value="eye" catalog="system"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="hideImage" value="eye.slash" catalog="system"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ім'я" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-yA-rWh">
                                         <rect key="frame" x="0.0" y="150" width="353" height="55"/>
@@ -457,12 +467,20 @@
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="db8-9Y-oz4">
+            <size key="intrinsicContentSize" width="104.33333333333333" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="addPhoto" width="100" height="100"/>
         <image name="apple" width="21" height="24.666666030883789"/>
         <image name="backgroundAutherisationPage" width="394.66665649414062" height="453.33334350585938"/>
         <image name="checkbox_selected" width="33.333332061767578" height="33.333332061767578"/>
         <image name="checkbox_unselected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="eye.fill" catalog="system" width="128" height="80"/>
+        <image name="eye.slash" catalog="system" width="128" height="84"/>
         <image name="facebook" width="25" height="25"/>
         <image name="logo" width="633" height="632"/>
         <namedColor name="Dark Grey">

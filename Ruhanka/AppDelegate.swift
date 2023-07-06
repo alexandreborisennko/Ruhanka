@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FMSecureTextField
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

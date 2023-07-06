@@ -17,6 +17,7 @@
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
 		0477BDB62A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */; };
+		C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoundCornersForTextOutlet.swift; sourceTree = "<group>"; };
+		3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.release.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.release.xcconfig"; sourceTree = "<group>"; };
+		6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.debug.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.debug.xcconfig"; sourceTree = "<group>"; };
+		88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruhanka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				041E91F92A54388A00233723 /* Ruhanka */,
 				041E91F82A54388A00233723 /* Products */,
+				8508087335EB5A21ACEE7BCF /* Pods */,
+				BD0C466075F759FAA884F408 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +102,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8508087335EB5A21ACEE7BCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */,
+				3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD0C466075F759FAA884F408 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 041E920E2A54388C00233723 /* Build configuration list for PBXNativeTarget "Ruhanka" */;
 			buildPhases = (
+				DFDBBF46C626DC20F99B7581 /* [CP] Check Pods Manifest.lock */,
 				041E91F32A54388A00233723 /* Sources */,
 				041E91F42A54388A00233723 /* Frameworks */,
 				041E91F52A54388A00233723 /* Resources */,
+				CE8C86060836D7EB098845B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +187,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE8C86060836D7EB098845B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ruhanka/Pods-Ruhanka-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ruhanka/Pods-Ruhanka-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ruhanka/Pods-Ruhanka-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFDBBF46C626DC20F99B7581 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ruhanka-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		041E91F32A54388A00233723 /* Sources */ = {
@@ -314,6 +383,7 @@
 		};
 		041E920F2A54388C00233723 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -344,6 +414,7 @@
 		};
 		041E92102A54388C00233723 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
