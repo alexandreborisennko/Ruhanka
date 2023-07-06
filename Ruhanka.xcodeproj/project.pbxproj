@@ -15,6 +15,7 @@
 		041E92072A54388C00233723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041E92062A54388C00233723 /* Assets.xcassets */; };
 		041E920A2A54388C00233723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041E92082A54388C00233723 /* LaunchScreen.storyboard */; };
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
+		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		041E92092A54388C00233723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041E920B2A54388C00233723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
+		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
 				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
+				0477BDB22A5704AD00FA9D32 /* LogInVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */,
 				041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */,
+				0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */,
 				04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */,
 				041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */,
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,

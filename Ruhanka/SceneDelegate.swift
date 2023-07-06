@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Ruhanka
 //
-//  Created by Mac on 04.07.2023.
+//  Created by Oleksandr Borysenko on 04.07.2023.
 //
 
 import UIKit

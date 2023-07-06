@@ -2,7 +2,7 @@
 //  EmailRegistrationVC.swift
 //  Ruhanka
 //
-//  Created by Mac on 05.07.2023.
+//  Created by Oleksandr Borysenko on 05.07.2023.
 //
 
 import UIKit
@@ -17,21 +17,15 @@ class EmailRegistrationVC: UIViewController {
     }
     
     @IBOutlet weak var passwordOutlet: UITextField!
-    
     @IBOutlet weak var emailFieldOutlet: UITextField!
-    
     @IBOutlet weak var nameOutlet: UITextField!
-    
     @IBOutlet weak var surnameOutlet: UITextField!
-    
     @IBOutlet weak var birthDateOutlet: UITextField!
     
     @IBAction func checkBoxPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-
-            
-        
     }
+    
     //MARK: -  makeRoundCornersForTextOutlet, Function that makes round corners for Text Inputs
     
     func makeRoundCornersForTextOutlet(for textFields: UITextField...) { //... is a variadic parameter
