@@ -47,7 +47,7 @@ func checkPasswordStrength(_ password: String) -> Bool {
 func createAlert(from viewController:UIViewController, errorText error:String) {
     // Create a new alert
     
-    var dialogMessage = UIAlertController(title: "Увага", message:error, preferredStyle: .alert)
+    let dialogMessage = UIAlertController(title: "Увага", message:error, preferredStyle: .alert)
     
     // Create OK button with action handler
     let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in

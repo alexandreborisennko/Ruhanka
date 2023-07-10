@@ -8,10 +8,9 @@
 import UIKit
 import FirebaseAuth
 
-class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     
-    var originalImage: UIImage?
-    var imagePicker = UIImagePickerController()
+
     
     
 
@@ -41,7 +40,7 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UII
               let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
               view.addGestureRecognizer(tapGesture)
         
-        originalImage = imageView.image
+        
     }
     
 
@@ -55,51 +54,10 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UII
 
     }
     @IBAction func btnClicked(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                    print("Button capture")
-                    imagePicker.delegate = self
-                    imagePicker.sourceType = .photoLibrary
-                    imagePicker.allowsEditing = false
-                    present(imagePicker, animated: true, completion: nil)
-                }
+       
     }
-    //MARK: -  ImagePickerController
+  
     
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[.originalImage] as? UIImage {
-            originalImage = selectedImage
-            
-            updateImageView()
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func updateImageView() {
-        if let image = originalImage {
-            let resizedImage = resizeImage(image: image, targetSize: CGSize(width: 200, height: 200))
-            let circledImage = resizedImage.circleMasked()
-            imageView.image = circledImage
-        }
-    }
-
-    
-    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-        
-        let widthRatio = targetSize.width / size.width
-        let heightRatio = targetSize.height / size.height
-        
-        let scaleFactor = min(widthRatio, heightRatio)
-        let scaledSize = CGSize(width: size.width * scaleFactor, height: size.height * scaleFactor)
-        
-        let renderer = UIGraphicsImageRenderer(size: scaledSize)
-        let newImage = renderer.image { _ in
-            image.draw(in: CGRect(origin: .zero, size: scaledSize))
-        }
-        
-        return newImage
-    }
 
 
  
@@ -154,25 +112,6 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UII
 
 }
 
-//MARK: -  UIImage extension for avatar picture make circle
-
-extension UIImage {
-    func circleMasked() -> UIImage? {
-        let imageView = UIImageView(image: self)
-        imageView.contentMode = .scaleAspectFill
-        imageView.frame = CGRect(origin: .zero, size: self.size)
-        imageView.layer.cornerRadius = self.size.width / 2
-        imageView.layer.masksToBounds = true
-
-        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        imageView.layer.render(in: context)
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return result
-    }
-}
 
 
 //MARK: -  UIView extension for button to shake
