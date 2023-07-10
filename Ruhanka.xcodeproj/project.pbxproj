@@ -14,6 +14,9 @@
 		041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 041E92032A54388A00233723 /* Ruhanka.xcdatamodeld */; };
 		041E92072A54388C00233723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041E92062A54388C00233723 /* Assets.xcassets */; };
 		041E920A2A54388C00233723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041E92082A54388C00233723 /* LaunchScreen.storyboard */; };
+		044121D92A57218800039C77 /* EmailRegistatinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121D82A57218800039C77 /* EmailRegistatinModel.swift */; };
+		044121DB2A581A7D00039C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044121DA2A581A7C00039C77 /* GoogleService-Info.plist */; };
+		044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */; };
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
 		0477BDB62A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */; };
@@ -30,6 +33,9 @@
 		041E92062A54388C00233723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041E92092A54388C00233723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041E920B2A54388C00233723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044121D82A57218800039C77 /* EmailRegistatinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistatinModel.swift; sourceTree = "<group>"; };
+		044121DA2A581A7C00039C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesVC.swift; sourceTree = "<group>"; };
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoundCornersForTextOutlet.swift; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 				041E92082A54388C00233723 /* LaunchScreen.storyboard */,
 				041E920B2A54388C00233723 /* Info.plist */,
 				041E92032A54388A00233723 /* Ruhanka.xcdatamodeld */,
+				044121DA2A581A7C00039C77 /* GoogleService-Info.plist */,
 			);
 			path = Ruhanka;
 			sourceTree = "<group>";
@@ -90,6 +97,7 @@
 				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
 				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
 				0477BDB22A5704AD00FA9D32 /* LogInVC.swift */,
+				044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */,
+				044121D82A57218800039C77 /* EmailRegistatinModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,7 +117,6 @@
 				6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */,
 				3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -181,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041E920A2A54388C00233723 /* LaunchScreen.storyboard in Resources */,
+				044121DB2A581A7D00039C77 /* GoogleService-Info.plist in Resources */,
 				041E92072A54388C00233723 /* Assets.xcassets in Resources */,
 				041E92022A54388A00233723 /* Main.storyboard in Resources */,
 			);
@@ -235,6 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044121D92A57218800039C77 /* EmailRegistatinModel.swift in Sources */,
+				044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */,
 				041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */,
 				041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */,
 				0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */,

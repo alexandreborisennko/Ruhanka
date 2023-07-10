@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FEEBF781-C181-4F58-BC7B-5822E58DCF52"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ruhanka/Controllers/EmailRegistrationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "EmailRegistrationVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B - 51bcedfc4d59a2cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ruhanka.EmailRegistrationVC.passwordOutlet.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "Ruhanka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/Development/Ruhanka/Ruhanka/Controllers/EmailRegistrationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B - fda20c28a27ff6d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ruhanka.EmailRegistrationVC.passwordOutlet.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "Ruhanka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/Development/Ruhanka/Ruhanka/Controllers/EmailRegistrationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B - 4ad0a6dcfc1539c3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ruhanka.EmailRegistrationVC.passwordOutlet.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "Ruhanka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/Development/Ruhanka/Ruhanka/Controllers/EmailRegistrationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B - 45be55287e71b497"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ruhanka.EmailRegistrationVC.passwordOutlet.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Ruhanka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/Development/Ruhanka/Ruhanka/Controllers/EmailRegistrationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B - fd65cf9c24f6bbdb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ruhanka.EmailRegistrationVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ruhanka.EmailRegistrationVC"
+                  moduleName = "Ruhanka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/Development/Ruhanka/Ruhanka/Controllers/EmailRegistrationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "0D397C3F-0E21-4243-97F4-E1E63C4F584B - b96b62448eb4632d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ruhanka.EmailRegistrationVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ruhanka.EmailRegistrationVC&gt;"
+                  moduleName = "Ruhanka"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/Development/Ruhanka/Ruhanka/Controllers/EmailRegistrationVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

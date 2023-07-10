@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kt-ku-Lk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971.7557251908396" y="-645.07042253521126"/>
+            <point key="canvasLocation" x="972" y="-739"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
@@ -306,6 +306,22 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
+        <!--Available CoursesVC-->
+        <scene sceneID="Gzy-gp-328">
+            <objects>
+                <viewController id="22v-zb-76Z" customClass="AvailableCoursesVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGk-S5-zWV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1OS-jE-nvD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dIJ-7R-GSQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38i-Cb-Ugj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2066" y="14"/>
+        </scene>
         <!--AccountRegistration-->
         <scene sceneID="AXd-1i-ycn">
             <objects>
@@ -314,7 +330,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Afy-cX-Pnd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Afy-cX-Pnd">
                                 <rect key="frame" x="20" y="243" width="353" height="355"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nf1-Ox-g5T">
@@ -326,7 +342,7 @@
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnB-oG-XKF" customClass="FMSecureTextField" customModule="FMSecureTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="MnB-oG-XKF" customClass="FMSecureTextField" customModule="FMSecureTextField">
                                         <rect key="frame" x="0.0" y="75" width="353" height="55"/>
                                         <color key="backgroundColor" name="Light grey"/>
                                         <constraints>
@@ -339,7 +355,20 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="showImage" value="eye" catalog="system"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="hideImage" value="eye.slash" catalog="system"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="passwordDidEndEditing:" destination="OWB-Om-YF0" eventType="editingDidEnd" id="gV9-bW-Pst"/>
+                                            <action selector="passwordDidStartEditing:" destination="OWB-Om-YF0" eventType="editingDidBegin" id="Uc7-Vx-b48"/>
+                                        </connections>
                                     </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeC-tv-GKf">
+                                        <rect key="frame" x="0.0" y="140" width="353" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="dxE-OV-U8B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ім'я" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-yA-rWh">
                                         <rect key="frame" x="0.0" y="150" width="353" height="55"/>
                                         <color key="backgroundColor" name="Light grey"/>
@@ -388,6 +417,9 @@
                                     </attributedString>
                                     <color key="baseBackgroundColor" name="Pink"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registrationButtonPressed:" destination="OWB-Om-YF0" eventType="touchUpInside" id="wGZ-bi-b01"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="nDI-rf-hQV">
                                 <rect key="frame" x="146.66666666666666" y="123" width="100" height="100"/>
@@ -418,6 +450,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-Jz-uPm">
+                                <rect key="frame" x="262" y="123" width="131" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choose photo"/>
+                                <connections>
+                                    <action selector="btnClicked:" destination="OWB-Om-YF0" eventType="touchUpInside" id="vYB-KP-FXt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N2H-MO-UsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -439,9 +480,12 @@
                     <connections>
                         <outlet property="birthDateOutlet" destination="UAA-yK-JuE" id="gvU-4n-fFr"/>
                         <outlet property="emailFieldOutlet" destination="nf1-Ox-g5T" id="0Ia-rn-RHD"/>
+                        <outlet property="imageView" destination="nDI-rf-hQV" id="xyE-wD-mAa"/>
                         <outlet property="nameOutlet" destination="xGB-yA-rWh" id="UZm-oQ-oGn"/>
+                        <outlet property="passwordHint" destination="aeC-tv-GKf" id="lEc-8L-AoT"/>
                         <outlet property="passwordOutlet" destination="MnB-oG-XKF" id="9hO-ko-mwA"/>
                         <outlet property="surnameOutlet" destination="g8c-kf-cz5" id="HjE-zM-Qls"/>
+                        <segue destination="22v-zb-76Z" kind="show" identifier="LoginToCourses" id="8ll-dt-k3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-Ah-AtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -468,6 +512,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="MnB-oG-XKF">
+            <size key="intrinsicContentSize" width="104.33333333333333" height="34"/>
+        </designable>
         <designable name="db8-9Y-oz4">
             <size key="intrinsicContentSize" width="104.33333333333333" height="34"/>
         </designable>
