@@ -11,9 +11,6 @@ import FirebaseAuth
 class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     
 
-    
-    
-
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var passwordOutlet: UITextField!
@@ -29,17 +26,17 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barStyle = .default
+
         makeRoundCornersForTextOutlet(for: emailFieldOutlet,passwordOutlet,nameOutlet,surnameOutlet,birthDateOutlet)
+        
         emailFieldOutlet.delegate = self // setting self as delegate to use textFieldShouldReturn
         passwordOutlet.delegate  = self
         nameOutlet.delegate = self
         surnameOutlet.delegate = self
         birthDateOutlet.delegate = self
         
-        // Add a tap gesture recognizer to the view
-              let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-              view.addGestureRecognizer(tapGesture)
-        
+        addTapGestureToDismissKeyboard() // function to dismiss keyboard on tap
         
     }
     
@@ -50,17 +47,11 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
     }
     @IBAction func passwordDidEndEditing(_ sender: UITextField) {
         passwordHint.isHidden = true
-        
-
-    }
+        }
     @IBAction func btnClicked(_ sender: UIButton) {
        
     }
   
-    
-
-
- 
     //MARK: -  Chechbox selection
 
     @IBAction func checkBoxPressed(_ sender: UIButton) {
@@ -69,6 +60,8 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
     }
     
     
+    //MARK: -  registrationButtonPressed
+
     @IBAction func registrationButtonPressed(_ sender: UIButton) {
 
         
@@ -86,7 +79,7 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
                     } else {
                             
                             //navigate to next screen
-                            self.performSegue(withIdentifier: "LoginToCourses", sender: self)
+                            self.performSegue(withIdentifier: "EmailRegisterToCourses", sender: self)
                     }
                 }
                     
@@ -105,59 +98,9 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
 
 
 
-    
-    @objc func dismissKeyboard() { //dismiss keyboard when clicking on blank area on UIViewController
-        view.endEditing(true)
-    }
-
 }
 
 
-
-//MARK: -  UIView extension for button to shake
-
-extension UIView {
-
-
-    // Using CAMediaTimingFunction
-    func shake(duration: TimeInterval = 0.5, values: [CGFloat]) {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-
-        // Swift 4.2 and above
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-
-        // Swift 4.1 and below
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-
-
-        animation.duration = duration // You can set fix duration
-        animation.values = values  // You can set fix values here also
-        self.layer.add(animation, forKey: "shake")
-    }
-
-
-    // Using SpringWithDamping
-    func shake(duration: TimeInterval = 0.5, xValue: CGFloat = 12, yValue: CGFloat = 0) {
-        self.transform = CGAffineTransform(translationX: xValue, y: yValue)
-        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-            self.transform = CGAffineTransform.identity
-        }, completion: nil)
-
-    }
-
-
-    // Using CABasicAnimation
-    func shake(duration: TimeInterval = 0.05, shakeCount: Float = 6, xValue: CGFloat = 12, yValue: CGFloat = 0){
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = duration
-        animation.repeatCount = shakeCount
-        animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - xValue, y: self.center.y - yValue))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + xValue, y: self.center.y - yValue))
-        self.layer.add(animation, forKey: "shake")
-    }
-
-}
 
 
 

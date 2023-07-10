@@ -14,12 +14,11 @@
 		041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 041E92032A54388A00233723 /* Ruhanka.xcdatamodeld */; };
 		041E92072A54388C00233723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041E92062A54388C00233723 /* Assets.xcassets */; };
 		041E920A2A54388C00233723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041E92082A54388C00233723 /* LaunchScreen.storyboard */; };
-		044121D92A57218800039C77 /* EmailRegistatinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121D82A57218800039C77 /* EmailRegistatinModel.swift */; };
+		044121D92A57218800039C77 /* RegistrationAndLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121D82A57218800039C77 /* RegistrationAndLoginModel.swift */; };
 		044121DB2A581A7D00039C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044121DA2A581A7C00039C77 /* GoogleService-Info.plist */; };
 		044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */; };
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
-		0477BDB62A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */; };
 		C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,12 +32,11 @@
 		041E92062A54388C00233723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041E92092A54388C00233723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041E920B2A54388C00233723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		044121D82A57218800039C77 /* EmailRegistatinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistatinModel.swift; sourceTree = "<group>"; };
+		044121D82A57218800039C77 /* RegistrationAndLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndLoginModel.swift; sourceTree = "<group>"; };
 		044121DA2A581A7C00039C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesVC.swift; sourceTree = "<group>"; };
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
-		0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoundCornersForTextOutlet.swift; sourceTree = "<group>"; };
 		3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.release.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.release.xcconfig"; sourceTree = "<group>"; };
 		6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.debug.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.debug.xcconfig"; sourceTree = "<group>"; };
 		88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruhanka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
-				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
 				0477BDB22A5704AD00FA9D32 /* LogInVC.swift */,
+				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
 				044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */,
 			);
 			path = Controllers;
@@ -105,8 +103,7 @@
 		0477BDB42A57069700FA9D32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0477BDB52A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift */,
-				044121D82A57218800039C77 /* EmailRegistatinModel.swift */,
+				044121D82A57218800039C77 /* RegistrationAndLoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,14 +241,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044121D92A57218800039C77 /* EmailRegistatinModel.swift in Sources */,
+				044121D92A57218800039C77 /* RegistrationAndLoginModel.swift in Sources */,
 				044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */,
 				041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */,
 				041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */,
 				0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */,
 				04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */,
 				041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */,
-				0477BDB62A5706C000FA9D32 /* MakeRoundCornersForTextOutlet.swift in Sources */,
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

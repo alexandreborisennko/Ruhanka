@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iph-A8-1wP">
-                                <rect key="frame" x="20" y="89" width="353" height="60"/>
+                                <rect key="frame" x="20" y="133" width="353" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HNP-TK-u2U"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE1-O2-5xU">
-                                <rect key="frame" x="20" y="169" width="353" height="60"/>
+                                <rect key="frame" x="20" y="213" width="353" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="r3A-a8-v0G"/>
                                 </constraints>
@@ -61,14 +61,14 @@
                                 </buttonConfiguration>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="it1-bU-aZm" userLabel="Line">
-                                <rect key="frame" x="26" y="279" width="341" height="1"/>
+                                <rect key="frame" x="26" y="323" width="341" height="1"/>
                                 <color key="backgroundColor" name="Dark Grey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="6pS-UC-AHl"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="або" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAR-FT-RCc">
-                                <rect key="frame" x="171.66666666666666" y="271" width="50" height="20"/>
+                                <rect key="frame" x="171.66666666666666" y="315" width="50" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Xec-aI-Bxf"/>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHI-C6-htz">
-                                <rect key="frame" x="20" y="330" width="353" height="55"/>
+                                <rect key="frame" x="20" y="374" width="353" height="55"/>
                                 <color key="backgroundColor" name="Light grey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="XIC-Vg-toP"/>
@@ -87,7 +87,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db8-9Y-oz4" customClass="FMSecureTextField" customModule="FMSecureTextField">
-                                <rect key="frame" x="20" y="405" width="353" height="55"/>
+                                <rect key="frame" x="20" y="449" width="353" height="55"/>
                                 <color key="backgroundColor" name="Light grey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="qVo-9C-jfl"/>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpZ-iX-kKP">
-                                <rect key="frame" x="128" y="480" width="137" height="29"/>
+                                <rect key="frame" x="128" y="524" width="137" height="29"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Забули ваш пароль?">
@@ -170,9 +170,11 @@
                             <constraint firstItem="xEn-47-bol" firstAttribute="bottom" secondItem="GLs-3S-ISb" secondAttribute="bottom" constant="20" id="yTS-X5-75J"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lJV-I3-tcj"/>
                     <connections>
                         <outlet property="emailOutlet" destination="GHI-C6-htz" id="BIA-I8-nHe"/>
                         <outlet property="passwordOutlet" destination="db8-9Y-oz4" id="wf3-pc-kq4"/>
+                        <segue destination="22v-zb-76Z" kind="show" identifier="LoginToCourses" id="t66-fg-QyG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kt-ku-Lk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -190,112 +192,94 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundAutherisationPage" translatesAutoresizingMaskIntoConstraints="NO" id="uGN-4J-whZ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PBH-pL-Gqr">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3g-zC-G15">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="238.33333333333334"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="GaP-bW-Ct0">
-                                                <rect key="frame" x="8" y="-25" width="146" height="98"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="GaP-bW-Ct0"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-Ne-Crb">
-                                        <rect key="frame" x="0.0" y="238.33333333333331" width="393" height="238.33333333333331"/>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-6e-Xdv">
-                                        <rect key="frame" x="0.0" y="476.66666666666657" width="393" height="238.33333333333331"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-mL-J6a">
-                                                <rect key="frame" x="20" y="0.0" width="353" height="71.333333333333329"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" image="apple" imagePadding="10" cornerStyle="capsule" titleAlignment="center">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Продовжити з Apple">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="24" name="Helvetica"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alignImageToLeft" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amu-8P-ZrF">
-                                                <rect key="frame" x="20" y="83.333333333333371" width="353" height="71.666666666666686"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" imagePlacement="leading" imagePadding="10" cornerStyle="capsule">
-                                                    <imageReference key="image" image="facebook" symbolScale="medium"/>
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Продовжити з Facebook">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="24" name="Helvetica"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="baseBackgroundColor" red="0.0" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C15-AS-JoB">
-                                                <rect key="frame" x="20" y="167" width="353" height="71.333333333333314"/>
-                                                <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Продовжити з Email">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="24" name="Helvetica"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="baseBackgroundColor" name="Pink"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <segue destination="OWB-Om-YF0" kind="show" id="OnM-RZ-S8k"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="nGJ-mL-J6a" secondAttribute="trailing" constant="20" id="1hx-cH-FpZ"/>
-                                            <constraint firstItem="Amu-8P-ZrF" firstAttribute="leading" secondItem="sWE-6e-Xdv" secondAttribute="leading" constant="20" id="Kn7-o3-VnD"/>
-                                            <constraint firstAttribute="trailing" secondItem="C15-AS-JoB" secondAttribute="trailing" constant="20" id="SG8-r9-i9U"/>
-                                            <constraint firstAttribute="trailing" secondItem="Amu-8P-ZrF" secondAttribute="trailing" constant="20" id="ibi-Ly-YLp"/>
-                                            <constraint firstItem="nGJ-mL-J6a" firstAttribute="leading" secondItem="sWE-6e-Xdv" secondAttribute="leading" constant="20" id="o46-EE-LCY"/>
-                                            <constraint firstItem="C15-AS-JoB" firstAttribute="leading" secondItem="sWE-6e-Xdv" secondAttribute="leading" constant="20" id="rr3-Zt-oPr"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-mL-J6a">
+                                <rect key="frame" x="20" y="580" width="353" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Fdf-Gm-F8L"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="apple" imagePadding="10" cornerStyle="capsule" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Продовжити з Apple">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alignImageToLeft" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C15-AS-JoB">
+                                <rect key="frame" x="20" y="728" width="353" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fpJ-NK-clP"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Продовжити з Email">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" name="Pink"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="OWB-Om-YF0" kind="show" identifier="AccountRegistrationToEmailRegister" id="OnM-RZ-S8k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amu-8P-ZrF">
+                                <rect key="frame" x="20" y="654" width="353" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QsD-aZ-cq4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" imagePlacement="leading" imagePadding="10" cornerStyle="capsule">
+                                    <imageReference key="image" image="facebook" symbolScale="medium"/>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Продовжити з Facebook">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" red="0.0" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nGJ-mL-J6a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DrO-Sm-Psw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nGJ-mL-J6a" secondAttribute="trailing" constant="20" id="Ic8-vl-VFw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C15-AS-JoB" secondAttribute="bottom" constant="30" id="PHj-Cr-gne"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Amu-8P-ZrF" secondAttribute="trailing" constant="20" id="QZ3-V4-zw7"/>
                             <constraint firstAttribute="bottom" secondItem="uGN-4J-whZ" secondAttribute="bottom" id="SmN-EB-CWa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBH-pL-Gqr" secondAttribute="bottom" id="T7x-hg-Ar5"/>
+                            <constraint firstItem="Amu-8P-ZrF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ukg-0f-xqt"/>
                             <constraint firstItem="uGN-4J-whZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WF7-hP-HNr"/>
-                            <constraint firstItem="PBH-pL-Gqr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YZA-Tl-u40"/>
-                            <constraint firstItem="PBH-pL-Gqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aPb-N7-Hgc"/>
+                            <constraint firstItem="C15-AS-JoB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZL0-dN-DL5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C15-AS-JoB" secondAttribute="trailing" constant="20" id="dDt-OT-sii"/>
+                            <constraint firstItem="C15-AS-JoB" firstAttribute="top" secondItem="Amu-8P-ZrF" secondAttribute="bottom" constant="14" id="eMe-Ys-97t"/>
+                            <constraint firstItem="Amu-8P-ZrF" firstAttribute="top" secondItem="nGJ-mL-J6a" secondAttribute="bottom" constant="14" id="lmD-pT-4GR"/>
                             <constraint firstItem="uGN-4J-whZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o3w-HN-Ivp"/>
                             <constraint firstAttribute="trailing" secondItem="uGN-4J-whZ" secondAttribute="trailing" id="tCx-Aj-dst"/>
-                            <constraint firstItem="PBH-pL-Gqr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uKs-3F-xWt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rWH-uL-s6v">
                         <barButtonItem key="rightBarButtonItem" title="Увійти" style="done" id="tx0-Ga-sVW">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="toz-j1-1pt" kind="push" identifier="AccountRegistrationToLogin" id="n2W-A9-T8w"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -460,15 +444,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-Jz-uPm">
-                                <rect key="frame" x="262" y="123" width="131" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Choose photo"/>
-                                <connections>
-                                    <action selector="btnClicked:" destination="OWB-Om-YF0" eventType="touchUpInside" id="vYB-KP-FXt"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N2H-MO-UsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -497,7 +472,7 @@
                         <outlet property="passwordHint" destination="aeC-tv-GKf" id="lEc-8L-AoT"/>
                         <outlet property="passwordOutlet" destination="MnB-oG-XKF" id="9hO-ko-mwA"/>
                         <outlet property="surnameOutlet" destination="g8c-kf-cz5" id="HjE-zM-Qls"/>
-                        <segue destination="22v-zb-76Z" kind="show" identifier="LoginToCourses" id="8ll-dt-k3a"/>
+                        <segue destination="22v-zb-76Z" kind="presentation" identifier="EmailRegisterToCourses" id="8ll-dt-k3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-Ah-AtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -531,6 +506,9 @@
             <size key="intrinsicContentSize" width="104.33333333333333" height="34"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="t66-fg-QyG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="addPhoto" width="100" height="100"/>
         <image name="apple" width="21" height="24.666666030883789"/>
@@ -541,7 +519,6 @@
         <image name="eye.fill" catalog="system" width="128" height="80"/>
         <image name="eye.slash" catalog="system" width="128" height="84"/>
         <image name="facebook" width="25" height="25"/>
-        <image name="logo" width="633" height="632"/>
         <namedColor name="Dark Grey">
             <color red="0.59200000762939453" green="0.59200000762939453" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
