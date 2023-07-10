@@ -442,6 +442,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPZ-bn-qcT">
                                         <rect key="frame" x="58.333333333333343" y="3.0000000000000018" width="294.66666666666663" height="27.666666666666671"/>
+                                        <color key="tintColor" red="0.96078431610000004" green="0.94117647410000005" blue="0.92941176889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <string key="text">Продовжуючи, ви приймаєте умови Політіки 
 Приватності та Умови використання</string>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
@@ -479,6 +480,8 @@
                     <navigationItem key="navigationItem" title="Створити ваш профіль" style="editor" id="irT-h2-pao"/>
                     <connections>
                         <outlet property="birthDateOutlet" destination="UAA-yK-JuE" id="gvU-4n-fFr"/>
+                        <outlet property="checkboxOutlet" destination="Rct-gk-bAx" id="eAJ-CE-cIu"/>
+                        <outlet property="checkboxText" destination="xPZ-bn-qcT" id="bol-fJ-FYc"/>
                         <outlet property="emailFieldOutlet" destination="nf1-Ox-g5T" id="0Ia-rn-RHD"/>
                         <outlet property="imageView" destination="nDI-rf-hQV" id="xyE-wD-mAa"/>
                         <outlet property="nameOutlet" destination="xGB-yA-rWh" id="UZm-oQ-oGn"/>

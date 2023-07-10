@@ -42,6 +42,8 @@ func checkPasswordStrength(_ password: String) -> Bool {
 }
 
 
+//MARK: -  CreateAlert with error when pressing Registration button
+
 func createAlert(from viewController:UIViewController, errorText error:String) {
     // Create a new alert
     
@@ -59,3 +61,9 @@ func createAlert(from viewController:UIViewController, errorText error:String) {
     
 }
 
+//MARK: -  textFieldShouldReturn - dismiss keyboard when clicking in viewController
+
+func textFieldShouldReturn(_ textField: UITextField) -> Bool { //dismiss keyboard when clicking enter key on keyboard
+    textField.resignFirstResponder()
+    return true
+}
