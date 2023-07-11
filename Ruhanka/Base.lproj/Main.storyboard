@@ -138,13 +138,27 @@
                                 <state key="normal" title="Забули ваш пароль?">
                                     <color key="titleColor" name="Dark Grey"/>
                                 </state>
+                                <connections>
+                                    <action selector="forgetPassword:" destination="toz-j1-1pt" eventType="touchUpInside" id="i0F-Es-Avf"/>
+                                </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Инструкція по відновленню паролю вислана на пошту" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzS-8B-6Y6">
+                                <rect key="frame" x="96.666666666666686" y="578" width="200" height="32.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="rlE-xW-fjH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" name="Pink"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xEn-47-bol"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ee5-Eq-Ki0" firstAttribute="centerX" secondItem="5Ta-9b-Psp" secondAttribute="centerX" id="0Hm-WG-xc1"/>
                             <constraint firstItem="GLs-3S-ISb" firstAttribute="top" secondItem="Ee5-Eq-Ki0" secondAttribute="bottom" constant="20" id="26L-hC-S1b"/>
+                            <constraint firstItem="ZzS-8B-6Y6" firstAttribute="centerX" secondItem="5Ta-9b-Psp" secondAttribute="centerX" id="5HS-yl-V4j"/>
+                            <constraint firstItem="ZzS-8B-6Y6" firstAttribute="top" secondItem="hpZ-iX-kKP" secondAttribute="bottom" constant="25" id="8V7-Yf-4wx"/>
                             <constraint firstItem="DAR-FT-RCc" firstAttribute="top" secondItem="iE1-O2-5xU" secondAttribute="bottom" constant="42" id="ALE-iv-g1A"/>
                             <constraint firstItem="GHI-C6-htz" firstAttribute="leading" secondItem="xEn-47-bol" secondAttribute="leading" constant="20" id="BXH-pn-vUd"/>
                             <constraint firstItem="xEn-47-bol" firstAttribute="trailing" secondItem="GHI-C6-htz" secondAttribute="trailing" constant="20" id="LAs-bs-h67"/>
@@ -174,12 +188,13 @@
                     <connections>
                         <outlet property="emailOutlet" destination="GHI-C6-htz" id="BIA-I8-nHe"/>
                         <outlet property="passwordOutlet" destination="db8-9Y-oz4" id="wf3-pc-kq4"/>
+                        <outlet property="passwordResetHint" destination="ZzS-8B-6Y6" id="Ske-k7-nSh"/>
                         <segue destination="22v-zb-76Z" kind="show" identifier="LoginToCourses" id="t66-fg-QyG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kt-ku-Lk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="-739"/>
+            <point key="canvasLocation" x="971.7557251908396" y="-739.43661971830988"/>
         </scene>
         <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
@@ -290,7 +305,7 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
-        <!--Available CoursesVC-->
+        <!--Програми-->
         <scene sceneID="Gzy-gp-328">
             <objects>
                 <viewController id="22v-zb-76Z" customClass="AvailableCoursesVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
@@ -309,7 +324,7 @@
                         <viewLayoutGuide key="safeArea" id="1OS-jE-nvD"/>
                         <color key="backgroundColor" name="Light grey"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dIJ-7R-GSQ"/>
+                    <navigationItem key="navigationItem" title="Програми" id="dIJ-7R-GSQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38i-Cb-Ugj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

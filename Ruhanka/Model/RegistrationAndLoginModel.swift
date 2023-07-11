@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 //MARK: -  checkPasswordStrength
 
 func checkPasswordStrength(_ password: String) -> Bool {
@@ -59,6 +61,58 @@ func createAlert(from viewController:UIViewController, errorText error:String) {
     // Present alert to user
     viewController.present(dialogMessage, animated: true, completion: nil)
     
+}
+
+
+//MARK: -  Create reset Password view
+func resetPassword(from viewController: UIViewController) {
+    // Declare Alert message
+    let dialogMessage = UIAlertController(title: "Відновлення паролю", message: "Для відновлення паролю введіть вашу пошту на натисніть Ok. \n \n Інструкція по відновленню буде вислана вам на пошту.", preferredStyle: .alert)
+
+    // Add text field
+    dialogMessage.addTextField(configurationHandler: { textField in
+        textField.placeholder = "Введіть вашу пошту."
+    })
+    
+    //Create Cancen button with action handler
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+    
+    // Create OK button with action handler
+    let ok = UIAlertAction(title: "OK", style: .default, handler: {(action) -> Void in
+        guard let myVC = viewController as? LogInVC,
+              let email = dialogMessage.textFields?.first?.text
+        else {
+            return
+        }
+        // we downcast the viewController to exact type of LogInVC and working with exactly the original instance of it with all of it methods AND properties (including IBoutlets.
+        // But if we use let myVC = LogInVC(), we create a NEW instance of this class with its methods but WITHOUT properties, so you could not
+        
+        
+        if email.isEmpty {
+            //create custom color for placeholder text in case user didn't write it.
+            let placeholderText = "Ви не ввели пошту"
+            let placeholderColor = UIColor.red
+            let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: placeholderColor]
+            let attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
+            dialogMessage.textFields?.first?.attributedPlaceholder = attributedPlaceholder
+            myVC.passwordResetHint.isHidden = false
+            myVC.passwordResetHint.text = "Podliva"
+           
+            
+
+        } else {
+            myVC.sendPasswordReset(withEmail: email)
+            myVC.passwordResetHint.isHidden = false
+        }
+        
+    })
+    
+    // add cancel and ok buttons
+    dialogMessage.addAction(ok)
+    dialogMessage.addAction(cancel)
+    
+    //show alert message to user
+    viewController.present(dialogMessage, animated: true, completion: nil)
 }
 
 

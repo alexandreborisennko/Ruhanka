@@ -16,12 +16,17 @@ class LogInVC: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.barStyle = .default
         makeRoundCornersForTextOutlet(for: emailOutlet,passwordOutlet)
         addTapGestureToDismissKeyboard() // function to dismiss keyboard on tap
-
         emailOutlet.delegate = self
         passwordOutlet.delegate = self
 
     }
 
+    @IBOutlet weak var passwordResetHint: UILabel!
+    
+    
+    @IBAction func forgetPassword(_ sender: UIButton) {
+        resetPassword(from: self)
+    }
     @IBOutlet weak var emailOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
     
@@ -37,6 +42,14 @@ class LogInVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil){
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            callback?(error)
+        }
+    }
+    
+
 
 }
 

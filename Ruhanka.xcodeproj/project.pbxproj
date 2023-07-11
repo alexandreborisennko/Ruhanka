@@ -92,8 +92,8 @@
 		04558DE72A55A2E60029EFF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
 				0477BDB22A5704AD00FA9D32 /* LogInVC.swift */,
+				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
 				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
 				044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */,
 			);
