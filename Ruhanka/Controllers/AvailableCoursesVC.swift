@@ -10,12 +10,19 @@ import FirebaseAuth
 
 class AvailableCoursesVC: UIViewController {
     
-    let marafonNog = Course(courseImage: #imageLiteral(resourceName: "backgroundAutherisationPage"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
+    let marafonNog = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
     
-    let marafonPlechey = Course(courseImage: #imageLiteral(resourceName: "backgroundAutherisationPage"), courseLevel: [easyLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Плечей", courseAuthor: "Даша Харченко", courseLength: "15 дней")
+    let marafonPlechey = Course(courseImage: #imageLiteral(resourceName: "course2"), courseLevel: [easyLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Плечей", courseAuthor: "Даша Харченко", courseLength: "15 дней")
+    
+    let marafonNog2 = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
+    
+    let marafonPlechey2 = Course(courseImage: #imageLiteral(resourceName: "course2"), courseLevel: [easyLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Плечей", courseAuthor: "Даша Харченко", courseLength: "15 дней")
+    
+    let marafonNog3 = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
+    
     
     var availableCourses: [Course] { //computed variable
-        return  [marafonNog, marafonPlechey]
+        return  [marafonNog, marafonPlechey,marafonNog2,marafonPlechey2,marafonNog3]
     }
     
     
@@ -27,6 +34,8 @@ class AvailableCoursesVC: UIViewController {
         navigationItem.setHidesBackButton(true, animated: true) // hides back button
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
+        
       
     }
     
@@ -50,9 +59,10 @@ extension AvailableCoursesVC: UITableViewDataSource {
         return availableCourses.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) //create reusable cell
-        cell.textLabel?.text =  availableCourses[indexPath.row].courseTitle
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCell //create reusable cell with all properties of custom cell
+        cell.courseTitle.text = availableCourses[indexPath.row].courseTitle
+        cell.courseMainImage.image = availableCourses[indexPath.row].courseImage
         return cell
     }
     
@@ -60,7 +70,7 @@ extension AvailableCoursesVC: UITableViewDataSource {
 }
 
 extension AvailableCoursesVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected
         print(indexPath.row)
     }
 }

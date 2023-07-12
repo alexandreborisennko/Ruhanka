@@ -9,7 +9,8 @@ import Foundation
 
 struct K {
     
-    static var reusableCell = "ReusableCell"
+    static let reusableCell = "ReusableCell"
+    static let cellNibName = "CourseCell"
     
     struct Segues {
         static var emailToCourses = "EmailRegisterToCourses"
