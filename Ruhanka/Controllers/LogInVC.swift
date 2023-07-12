@@ -37,7 +37,7 @@ class LogInVC: UIViewController, UITextFieldDelegate {
                     createAlert(from: self, errorText: e.localizedDescription)
                     print(e)
                 } else {
-                    self.performSegue(withIdentifier: "LoginToCourses", sender: self)
+                    self.performSegue(withIdentifier: K.Segues.loginToCorses, sender: self)
                 }
             }
         }

@@ -17,6 +17,7 @@
 		044121D92A57218800039C77 /* RegistrationAndLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121D82A57218800039C77 /* RegistrationAndLoginModel.swift */; };
 		044121DB2A581A7D00039C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044121DA2A581A7C00039C77 /* GoogleService-Info.plist */; };
 		044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */; };
+		044121ED2A5F172B00039C77 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121EC2A5F172B00039C77 /* Constants.swift */; };
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
 		C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */; };
@@ -35,6 +36,7 @@
 		044121D82A57218800039C77 /* RegistrationAndLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndLoginModel.swift; sourceTree = "<group>"; };
 		044121DA2A581A7C00039C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesVC.swift; sourceTree = "<group>"; };
+		044121EC2A5F172B00039C77 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.release.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				041E920B2A54388C00233723 /* Info.plist */,
 				041E92032A54388A00233723 /* Ruhanka.xcdatamodeld */,
 				044121DA2A581A7C00039C77 /* GoogleService-Info.plist */,
+				044121EC2A5F172B00039C77 /* Constants.swift */,
 			);
 			path = Ruhanka;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */,
 				041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */,
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,
+				044121ED2A5F172B00039C77 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

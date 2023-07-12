@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Log InVC-->
+        <!--Увійти в ваш профіль-->
         <scene sceneID="Oag-TN-5Ii">
             <objects>
-                <viewController id="toz-j1-1pt" customClass="LogInVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Увійти в ваш профіль" id="toz-j1-1pt" customClass="LogInVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ta-9b-Psp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                                 <color key="textColor" name="Dark Grey"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHI-C6-htz">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="antideps@gmail.com" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GHI-C6-htz">
                                 <rect key="frame" x="20" y="374" width="353" height="55"/>
                                 <color key="backgroundColor" name="Light grey"/>
                                 <constraints>
@@ -86,7 +86,7 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db8-9Y-oz4" customClass="FMSecureTextField" customModule="FMSecureTextField">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alex1234!" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db8-9Y-oz4" customClass="FMSecureTextField" customModule="FMSecureTextField">
                                 <rect key="frame" x="20" y="449" width="353" height="55"/>
                                 <color key="backgroundColor" name="Light grey"/>
                                 <constraints>
@@ -184,7 +184,7 @@
                             <constraint firstItem="xEn-47-bol" firstAttribute="bottom" secondItem="GLs-3S-ISb" secondAttribute="bottom" constant="20" id="yTS-X5-75J"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lJV-I3-tcj"/>
+                    <navigationItem key="navigationItem" title="Увійти в ваш профіль" id="lJV-I3-tcj"/>
                     <connections>
                         <outlet property="emailOutlet" destination="GHI-C6-htz" id="BIA-I8-nHe"/>
                         <outlet property="passwordOutlet" destination="db8-9Y-oz4" id="wf3-pc-kq4"/>
@@ -324,7 +324,13 @@
                         <viewLayoutGuide key="safeArea" id="1OS-jE-nvD"/>
                         <color key="backgroundColor" name="Light grey"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Програми" id="dIJ-7R-GSQ"/>
+                    <navigationItem key="navigationItem" title="Програми" id="dIJ-7R-GSQ">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="iCo-kV-Qzl">
+                            <connections>
+                                <action selector="logOutBtn:" destination="22v-zb-76Z" id="NIf-Wk-CWf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38i-Cb-Ugj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,7 +493,7 @@
                         <outlet property="passwordHint" destination="aeC-tv-GKf" id="lEc-8L-AoT"/>
                         <outlet property="passwordOutlet" destination="MnB-oG-XKF" id="9hO-ko-mwA"/>
                         <outlet property="surnameOutlet" destination="g8c-kf-cz5" id="HjE-zM-Qls"/>
-                        <segue destination="22v-zb-76Z" kind="presentation" identifier="EmailRegisterToCourses" id="8ll-dt-k3a"/>
+                        <segue destination="22v-zb-76Z" kind="show" identifier="EmailRegisterToCourses" id="8ll-dt-k3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-Ah-AtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -518,7 +524,7 @@
             <size key="intrinsicContentSize" width="104.33333333333333" height="34"/>
         </designable>
         <designable name="db8-9Y-oz4">
-            <size key="intrinsicContentSize" width="104.33333333333333" height="34"/>
+            <size key="intrinsicContentSize" width="126" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

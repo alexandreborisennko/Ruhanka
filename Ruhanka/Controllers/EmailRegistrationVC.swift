@@ -79,7 +79,7 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
                     } else {
                             
                             //navigate to next screen
-                            self.performSegue(withIdentifier: "EmailRegisterToCourses", sender: self)
+                        self.performSegue(withIdentifier: K.Segues.emailToCourses, sender: self)
                     }
                 }
                     
