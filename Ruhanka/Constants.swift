@@ -13,8 +13,13 @@ struct K {
     static let cellNibName = "CourseCell"
     
     struct Segues {
-        static var emailToCourses = "EmailRegisterToCourses"
-        static var loginToCorses = "LoginToCourses"
+        static let emailToCourses = "EmailRegisterToCourses"
+        static let loginToCorses = "LoginToCourses"
+    }
+    
+    struct Colors {
+        static let Pink = "Pink"
+        static let DarkGrey = "Dark Grey"
     }
     
 }
