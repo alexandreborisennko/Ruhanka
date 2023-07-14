@@ -9,9 +9,14 @@ import UIKit
 
 class CourseCell: UITableViewCell {
     
+    @IBOutlet weak var courseType: UILabel!
+    @IBOutlet weak var courseLevel: UILabel!
     @IBOutlet weak var courseMainImage: UIImageView!
     @IBOutlet weak var courseTitle: UILabel!
+    @IBOutlet weak var courseLength: UILabel!
+    @IBOutlet weak var courseAuthor: UILabel!
     
+    @IBOutlet weak var stackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,3 +29,5 @@ class CourseCell: UITableViewCell {
     }
 
 }
+
+

@@ -8,19 +8,19 @@
     
     struct CourseProperties {
         struct Level {
-            static let easy = "Початківець"
-            static let medium = "Впевнений"
-            static let hard = "Досвідчений"
+            static let easy = "ПОЧАТКІВЕЦЬ"
+            static let medium = "ВПЕВНЕНИЙ"
+            static let hard = "ДОСВІДЧЕНИЙ"
         }
         struct ProgramType {
-            static let yoga = "Йога"
-            static let fitness = "Тренування"
-            static let grass = "Трави"
+            static let yoga = "ЙОГА"
+            static let fitness = "ТРЕНУВАННЯ"
+            static let grass = "ТРАВИ"
         }
         struct BodyPart {
-            static let  shoulders = "Плечі"
-            static let  loin = "Поперек"
-            static let  legs = "Ноги"
+            static let  shoulders = "ПЛЕЧІ"
+            static let  loin = "ПОПЕРЕК"
+            static let  legs = "НОГИ"
         }
         
     }

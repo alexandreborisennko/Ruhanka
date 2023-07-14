@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "2023-07-14 10.50.46.jpg",
+      "filename" : "peakpx.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "2023-07-14 10.50.46@2x.jpg",
+      "filename" : "peakpx@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "2023-07-14 10.50.46@3x.jpg",
+      "filename" : "peakpx@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -18,7 +18,7 @@
 		044121DB2A581A7D00039C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044121DA2A581A7C00039C77 /* GoogleService-Info.plist */; };
 		044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */; };
 		044121ED2A5F172B00039C77 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121EC2A5F172B00039C77 /* CourseData.swift */; };
-		044121EF2A5F19DB00039C77 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121EE2A5F19DB00039C77 /* Course.swift */; };
+		044121EF2A5F19DB00039C77 /* AvailableCoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121EE2A5F19DB00039C77 /* AvailableCoursesModel.swift */; };
 		044121F12A5F271B00039C77 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F02A5F271B00039C77 /* Constants.swift */; };
 		044121F52A5F3E8300039C77 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F32A5F3E8300039C77 /* CourseCell.swift */; };
 		044121F62A5F3E8300039C77 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044121F42A5F3E8300039C77 /* CourseCell.xib */; };
@@ -41,7 +41,7 @@
 		044121DA2A581A7C00039C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesVC.swift; sourceTree = "<group>"; };
 		044121EC2A5F172B00039C77 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
-		044121EE2A5F19DB00039C77 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		044121EE2A5F19DB00039C77 /* AvailableCoursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesModel.swift; sourceTree = "<group>"; };
 		044121F02A5F271B00039C77 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		044121F32A5F3E8300039C77 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		044121F42A5F3E8300039C77 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
@@ -105,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				041E92002A54388A00233723 /* Main.storyboard */,
-				044121F32A5F3E8300039C77 /* CourseCell.swift */,
 				044121F42A5F3E8300039C77 /* CourseCell.xib */,
 			);
 			path = Views;
@@ -114,10 +113,11 @@
 		04558DE72A55A2E60029EFF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */,
+				044121F32A5F3E8300039C77 /* CourseCell.swift */,
 				0477BDB22A5704AD00FA9D32 /* LogInVC.swift */,
 				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
 				041E91FE2A54388A00233723 /* AuthorizationVC.swift */,
-				044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				044121D82A57218800039C77 /* RegistrationAndLoginModel.swift */,
-				044121EE2A5F19DB00039C77 /* Course.swift */,
+				044121EE2A5F19DB00039C77 /* AvailableCoursesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 				044121D92A57218800039C77 /* RegistrationAndLoginModel.swift in Sources */,
 				044121F12A5F271B00039C77 /* Constants.swift in Sources */,
 				044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */,
-				044121EF2A5F19DB00039C77 /* Course.swift in Sources */,
+				044121EF2A5F19DB00039C77 /* AvailableCoursesModel.swift in Sources */,
 				041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */,
 				041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */,
 				0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */,

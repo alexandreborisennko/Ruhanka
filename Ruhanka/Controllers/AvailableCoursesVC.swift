@@ -10,15 +10,15 @@ import FirebaseAuth
 
 class AvailableCoursesVC: UIViewController {
     
-    let marafonNog = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
+    let marafonNog = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType,grassType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Даша Харченко", courseLength: "20 дней")
     
     let marafonPlechey = Course(courseImage: #imageLiteral(resourceName: "course2"), courseLevel: [easyLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Плечей", courseAuthor: "Даша Харченко", courseLength: "15 дней")
     
-    let marafonNog2 = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
+    let marafonNog2 = Course(courseImage: #imageLiteral(resourceName: "course4"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
     
-    let marafonPlechey2 = Course(courseImage: #imageLiteral(resourceName: "course2"), courseLevel: [easyLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Плечей", courseAuthor: "Даша Харченко", courseLength: "15 дней")
+    let marafonPlechey2 = Course(courseImage: #imageLiteral(resourceName: "course3"), courseLevel: [easyLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Плечей", courseAuthor: "Ангеліна Кримська", courseLength: "15 дней")
     
-    let marafonNog3 = Course(courseImage: #imageLiteral(resourceName: "course1"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Dasha Harchenko", courseLength: "20 дней")
+    let marafonNog3 = Course(courseImage: #imageLiteral(resourceName: "course5"), courseLevel: [easyLevel,mediumLevel], courseType: [yogaType], courseBody: [shouldersPart], courseTitle: "Марафон Ніг", courseAuthor: "Анлегіна Кримська", courseLength: "20 дней")
     
     
     var availableCourses: [Course] { //computed variable
@@ -63,6 +63,24 @@ extension AvailableCoursesVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCell //create reusable cell with all properties of custom cell
         cell.courseTitle.text = availableCourses[indexPath.row].courseTitle
         cell.courseMainImage.image = availableCourses[indexPath.row].courseImage
+        cell.courseAuthor.text = availableCourses[indexPath.row].courseAuthor
+        cell.courseLevel.text = ""
+        for (index,element) in availableCourses[indexPath.row].courseLevel.enumerated() {
+            cell.courseLevel.text! += "\(element.level) "
+            if index+1 < availableCourses[indexPath.row].courseLevel.count {
+                cell.courseLevel.text! += "/ "
+            }
+        }
+        
+        cell.courseType.text = ""
+        for (index, element) in availableCourses[indexPath.row].courseType.enumerated() {
+            cell.courseType.text! += "\(element.type)  "
+            if index+1 < availableCourses[indexPath.row].courseType.count {
+                cell.courseType.text! += "·  "
+            }
+        }
+        cell.courseLength.text = "·   \(availableCourses[indexPath.row].courseLength)"
+        cell.courseMainImage.makeRoundCorners(byRadius: 20)
         return cell
     }
     

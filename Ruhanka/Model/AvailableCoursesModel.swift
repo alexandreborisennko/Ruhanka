@@ -44,7 +44,12 @@ let legsParts = BodyStruct(bodyPart: CourseProperties.BodyPart.legs)
 
 
 
-
+extension UIImageView {
+   func makeRoundCorners(byRadius rad: CGFloat) {
+      self.layer.cornerRadius = rad
+      self.clipsToBounds = true
+   }
+}
 
 
 
