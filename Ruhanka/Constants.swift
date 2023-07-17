@@ -15,6 +15,7 @@ struct K {
     struct Segues {
         static let emailToCourses = "EmailRegisterToCourses"
         static let loginToCorses = "LoginToCourses"
+        static let availableCoursesToPartCourse = "AvailableCourseToPartOfCourse"
     }
     
     struct Colors {

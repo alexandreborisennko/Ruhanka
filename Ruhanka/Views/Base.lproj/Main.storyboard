@@ -314,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="2Xh-xQ-i8g" userLabel="Stack View Menu">
-                                <rect key="frame" x="20" y="133" width="250" height="34"/>
+                                <rect key="frame" x="20" y="123" width="250" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW2-pe-fPT">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
@@ -372,14 +372,14 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1V-s3-542">
-                                <rect key="frame" x="0.0" y="167" width="393" height="1"/>
+                                <rect key="frame" x="0.0" y="157" width="393" height="1"/>
                                 <color key="backgroundColor" name="Dark Grey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Mho-Ww-bOd"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8mg-Qx-hC3">
-                                <rect key="frame" x="0.0" y="177" width="393" height="675"/>
+                                <rect key="frame" x="0.0" y="167" width="393" height="685"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -393,7 +393,7 @@
                             <constraint firstItem="2Xh-xQ-i8g" firstAttribute="leading" secondItem="1OS-jE-nvD" secondAttribute="leading" constant="20" id="hbr-xH-rrz"/>
                             <constraint firstItem="1OS-jE-nvD" firstAttribute="trailing" secondItem="e1V-s3-542" secondAttribute="trailing" id="jyM-Rv-AjO"/>
                             <constraint firstItem="8mg-Qx-hC3" firstAttribute="top" secondItem="2Xh-xQ-i8g" secondAttribute="bottom" constant="10" id="kbh-2v-DSj"/>
-                            <constraint firstItem="2Xh-xQ-i8g" firstAttribute="top" secondItem="1OS-jE-nvD" secondAttribute="top" constant="30" id="vPn-CI-0PI"/>
+                            <constraint firstItem="2Xh-xQ-i8g" firstAttribute="top" secondItem="1OS-jE-nvD" secondAttribute="top" constant="20" id="vPn-CI-0PI"/>
                             <constraint firstItem="e1V-s3-542" firstAttribute="leading" secondItem="1OS-jE-nvD" secondAttribute="leading" id="veY-3q-V7B"/>
                         </constraints>
                     </view>
@@ -410,6 +410,7 @@
                         <outlet property="menuMarafonButtonOutlet" destination="j5W-CC-0tN" id="YA0-RU-9nF"/>
                         <outlet property="menuRuhankaButtonOutlet" destination="QJO-Dw-rdP" id="npX-No-uhC"/>
                         <outlet property="tableView" destination="8mg-Qx-hC3" id="Xf2-LO-aQB"/>
+                        <segue destination="2JQ-Zr-pMy" kind="show" identifier="AvailableCourseToPartOfCourse" id="bid-rD-5hZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38i-Cb-Ugj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -597,6 +598,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4o-SY-Iuq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+        <!--PartOfCourse-->
+        <scene sceneID="H1H-GM-yPk">
+            <objects>
+                <viewController id="2JQ-Zr-pMy" userLabel="PartOfCourse" customClass="PartOfCourse" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uih-wA-wWf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xKf-VR-BKy">
+                                <rect key="frame" x="0.0" y="123" width="393" height="729"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5lc-rb-Vay"/>
+                        <color key="backgroundColor" name="Light grey"/>
+                        <constraints>
+                            <constraint firstItem="xKf-VR-BKy" firstAttribute="leading" secondItem="5lc-rb-Vay" secondAttribute="leading" id="Ph3-YN-k9l"/>
+                            <constraint firstAttribute="bottom" secondItem="xKf-VR-BKy" secondAttribute="bottom" id="SDu-zd-qLA"/>
+                            <constraint firstItem="5lc-rb-Vay" firstAttribute="trailing" secondItem="xKf-VR-BKy" secondAttribute="trailing" id="U01-hy-mSu"/>
+                            <constraint firstItem="xKf-VR-BKy" firstAttribute="top" secondItem="5lc-rb-Vay" secondAttribute="top" constant="20" id="fCM-1h-IFL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Частина програми" id="Jpw-H8-cfd">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="HZ2-oc-lRA">
+                            <connections>
+                                <action selector="logOutBtn:" destination="2JQ-Zr-pMy" id="WCK-Co-H1V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="xKf-VR-BKy" id="UkY-RW-WLK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5W-xd-lkL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893.8931297709923" y="12.67605633802817"/>
         </scene>
     </scenes>
     <designables>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Course {
+class Course {
     var courseImage : UIImage
     var courseLevel: [LevelStruct]
     var courseType: [TypeStruct]
@@ -20,7 +20,22 @@ struct Course {
         case ruhanka
     }
     var courseStructure: CourseStructure
+    var courseNumber: Int
+    
+    init(courseImage: UIImage, courseLevel: [LevelStruct], courseType: [TypeStruct], courseBody: [BodyStruct], courseTitle: String, courseAuthor: String, courseLength: String, courseStructure: CourseStructure, courseNumber: Int) {
+        self.courseImage = courseImage
+        self.courseLevel = courseLevel
+        self.courseType = courseType
+        self.courseBody = courseBody
+        self.courseTitle = courseTitle
+        self.courseAuthor = courseAuthor
+        self.courseLength = courseLength
+        self.courseStructure = courseStructure
+        self.courseNumber = courseNumber
+    }
 }
+
+
 
 struct LevelStruct {
     var level: String

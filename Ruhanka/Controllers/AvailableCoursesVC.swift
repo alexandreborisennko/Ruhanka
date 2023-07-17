@@ -13,13 +13,15 @@ class AvailableCoursesVC: UIViewController {
     var selectedButtonBar: UIView? = nil
     var filteredCourses: [Course] = []
     
-    var availableCourses: [Course] { //computed variable
+    var availableCourses: [Course] {                        //computed variable
         return  [AvailableCourses.marafonNog,
-                 AvailableCourses.ruhankaBitsepsa,
-                 AvailableCourses.marafonNog2,
-                 AvailableCourses.marafonPlechey2,
-                 AvailableCourses.ruhankaKopchik]
+                 AvailableCourses.RuhankaBitsepsa.main,
+                 AvailableCourses.MarafonNog2.main,
+                 AvailableCourses.MarafonPlechey.main,
+                 AvailableCourses.RuhankaKopchic.main]
     }
+    
+
     
     @IBOutlet weak var menuAllButtonOutlet: UIButton!
     @IBOutlet weak var menuMarafonButtonOutlet: UIButton!
@@ -41,6 +43,8 @@ class AvailableCoursesVC: UIViewController {
     
 
     
+    //MARK: -  Top menu Buttons
+    
 
     @IBAction func allButton(_ sender: UIButton) {
         filteredCourses = availableCourses
@@ -49,21 +53,20 @@ class AvailableCoursesVC: UIViewController {
     }
     
     @IBAction func marafonButton(_ sender: UIButton) {
-        filteredCourses(courseStructure: .marafon)
-        tableView.reloadData()
+        filterCourses(courseStructure: .marafon)
         selectButton(for: menuMarafonButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuRuhankaButtonOutlet])
     }
     
     @IBAction func ruhankaButton(_ sender: UIButton) {
-        filteredCourses(courseStructure: .ruhanka)
-        tableView.reloadData()
+        filterCourses(courseStructure: .ruhanka)
         selectButton(for: menuRuhankaButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuMarafonButtonOutlet])
     }
     
-    
-    func filteredCourses(courseStructure type: Course.CourseStructure) {
-        filteredCourses = availableCourses.filter { $0.courseStructure == type }
 
+    
+    func filterCourses(courseStructure type: Course.CourseStructure) {
+        filteredCourses = availableCourses.filter { $0.courseStructure == type }
+        tableView.reloadData()
     }
     
     func selectButton(for button: UIButton, deselectButtons: [UIButton]) {
@@ -100,28 +103,30 @@ extension AvailableCoursesVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCell //create reusable cell with all properties of custom cell
-        cell.courseTitle.text = filteredCourses[indexPath.row].courseTitle
-        cell.courseMainImage.image = filteredCourses[indexPath.row].courseImage
-        cell.courseAuthor.text = filteredCourses[indexPath.row].courseAuthor
-        cell.courseLevel.text = ""
-        for (index,element) in filteredCourses[indexPath.row].courseLevel.enumerated() {
-            cell.courseLevel.text! += "\(element.level) "
-            if index+1 < filteredCourses[indexPath.row].courseLevel.count {
-                cell.courseLevel.text! += "/ "
-            } else {
-                cell.courseLevel.text! += "  "
+      
+            cell.courseTitle.text = filteredCourses[indexPath.row].courseTitle
+            cell.courseMainImage.image = filteredCourses[indexPath.row].courseImage
+            cell.courseAuthor.text = filteredCourses[indexPath.row].courseAuthor
+            cell.courseLevel.text = ""
+            for (index,element) in filteredCourses[indexPath.row].courseLevel.enumerated() {
+                cell.courseLevel.text! += "\(element.level) "
+                if index+1 < filteredCourses[indexPath.row].courseLevel.count {
+                    cell.courseLevel.text! += "/ "
+                } else {
+                    cell.courseLevel.text! += "  "
+                }
             }
-        }
-        
-        cell.courseType.text = ""
-        for (index, element) in filteredCourses[indexPath.row].courseType.enumerated() {
-            cell.courseType.text! += "\(element.type)  "
-            if index+1 < filteredCourses[indexPath.row].courseType.count {
-                cell.courseType.text! += "·  "
+            
+            cell.courseType.text = ""
+            for (index, element) in filteredCourses[indexPath.row].courseType.enumerated() {
+                cell.courseType.text! += "\(element.type)  "
+                if index+1 < filteredCourses[indexPath.row].courseType.count {
+                    cell.courseType.text! += "·  "
+                }
             }
-        }
-        cell.courseLength.text = "·   \(filteredCourses[indexPath.row].courseLength)"
-        cell.courseMainImage.makeRoundCorners(byRadius: 20)
+            cell.courseLength.text = "·   \(filteredCourses[indexPath.row].courseLength)"
+            cell.courseMainImage.makeRoundCorners(byRadius: 20)
+           
         return cell
     }
     
@@ -130,8 +135,21 @@ extension AvailableCoursesVC: UITableViewDataSource {
 
 extension AvailableCoursesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected
-        print(indexPath.row)
+        
+       self.performSegue(withIdentifier: K.Segues.availableCoursesToPartCourse, sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segues.availableCoursesToPartCourse {
+            if let destinationVC = segue.destination as? PartOfCourse {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let courseTitle = filteredCourses[indexPath.row].courseTitle
+                    destinationVC.courseTitle = courseTitle
+                }
+            }
+        }
+    }
+
 }
 
 
