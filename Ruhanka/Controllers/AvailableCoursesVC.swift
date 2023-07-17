@@ -30,39 +30,34 @@ class AvailableCoursesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectButton(for: menuAllButtonOutlet,deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet])
         // Do any additional setup after loading the view.
         filteredCourses = availableCourses
-        selectButton(for: menuAllButtonOutlet)
-     
-        let lineView = UIView(frame: CGRect(x: 0, y: buttonConstaintTop.constant - 1, width: self.view.frame.width, height: 1))
-        lineView.backgroundColor = UIColor(named: K.Colors.DarkGrey)
-        self.view.addSubview(lineView)
-        
         navigationItem.setHidesBackButton(true, animated: true) // hides back button
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
-        
-      
     }
+    
+
     
 
     @IBAction func allButton(_ sender: UIButton) {
         filteredCourses = availableCourses
         tableView.reloadData()
-        selectButton(for: menuAllButtonOutlet)
+        selectButton(for: menuAllButtonOutlet, deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet])
     }
     
     @IBAction func marafonButton(_ sender: UIButton) {
         filteredCourses(courseStructure: .marafon)
         tableView.reloadData()
-        selectButton(for: menuMarafonButtonOutlet)
+        selectButton(for: menuMarafonButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuRuhankaButtonOutlet])
     }
     
     @IBAction func ruhankaButton(_ sender: UIButton) {
         filteredCourses(courseStructure: .ruhanka)
         tableView.reloadData()
-        selectButton(for: menuRuhankaButtonOutlet)
+        selectButton(for: menuRuhankaButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuMarafonButtonOutlet])
     }
     
     
@@ -71,10 +66,18 @@ class AvailableCoursesVC: UIViewController {
 
     }
     
-    func selectButton(for button: UIButton) {
-        selectedButtonBar = UIView.init(frame: CGRect(x: 0.0, y: button.frame.size.height - 3, width: button.frame.size.width, height: 3.0))
+    func selectButton(for button: UIButton, deselectButtons: [UIButton]) {
+        for deselectButton in deselectButtons {
+            deselectButton.isSelected = false
+        }
+        
+        button.isSelected = true
+        selectedButtonBar?.removeFromSuperview()
+        selectedButtonBar = UIView.init(frame: CGRect(x: 0.0, y: button.frame.size.height , width: button.frame.size.width, height: 3.0))
         selectedButtonBar?.backgroundColor = UIColor(named: K.Colors.Pink)
         button.addSubview(selectedButtonBar!)
+        
+
     }
     
     @IBAction func logOutBtn(_ sender: UIBarButtonItem) {
