@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class PartOfCourse: UIViewController {
+class PartOfCourseVC: UIViewController {
     var courseTitle: String = ""
     var allPartsOfCourse = myCourseParts
     var filteredPartsOfCourse: [CoursePart] = []
@@ -26,13 +26,13 @@ class PartOfCourse: UIViewController {
 
 //filteredPartsOfCourse = partsOfCourse.filter {$0.courseNumber ==  filteredCourses[indexPath.row].courseNumber }
 
-extension PartOfCourse: UITableViewDataSource {
+extension PartOfCourseVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredPartsOfCourse.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCell //create reusable cell with all properties of custom cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCellVC //create reusable cell with all properties of custom cell
       
         cell.courseTitle.text = "\(filteredPartsOfCourse[indexPath.row].courseTitle).   \(filteredPartsOfCourse[indexPath.row].coursePart)"
         cell.courseMainImage.image = filteredPartsOfCourse[indexPath.row].coursePartImage
@@ -63,7 +63,7 @@ extension PartOfCourse: UITableViewDataSource {
     
 }
 
-extension PartOfCourse: UITableViewDelegate {
+extension PartOfCourseVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected
         print("DJIGYRDA")
        //self.performSegue(withIdentifier: K.Segues.availableCoursesToPartCourse, sender: self)

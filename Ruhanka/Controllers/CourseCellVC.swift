@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CourseCell: UITableViewCell {
+class CourseCellVC: UITableViewCell {
     
     @IBOutlet weak var courseType: UILabel!
     @IBOutlet weak var courseLevel: UILabel!

@@ -102,7 +102,7 @@ extension AvailableCoursesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCell //create reusable cell with all properties of custom cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! CourseCellVC //create reusable cell with all properties of custom cell
       
             cell.courseTitle.text = filteredCourses[indexPath.row].courseTitle
             cell.courseMainImage.image = filteredCourses[indexPath.row].courseImage
@@ -141,7 +141,7 @@ extension AvailableCoursesVC: UITableViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.Segues.availableCoursesToPartCourse {
-            if let destinationVC = segue.destination as? PartOfCourse {
+            if let destinationVC = segue.destination as? PartOfCourseVC {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let courseTitle = filteredCourses[indexPath.row].courseTitle
                     destinationVC.courseTitle = courseTitle

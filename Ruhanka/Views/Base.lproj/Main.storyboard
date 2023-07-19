@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WcT-r0-wvx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LwT-Le-6i1">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -305,7 +305,7 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
-        <!--Програми-->
+        <!--Курси-->
         <scene sceneID="Gzy-gp-328">
             <objects>
                 <viewController id="22v-zb-76Z" customClass="AvailableCoursesVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
@@ -397,7 +397,7 @@
                             <constraint firstItem="e1V-s3-542" firstAttribute="leading" secondItem="1OS-jE-nvD" secondAttribute="leading" id="veY-3q-V7B"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Програми" id="dIJ-7R-GSQ">
+                    <navigationItem key="navigationItem" title="Курси" id="dIJ-7R-GSQ">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="iCo-kV-Qzl">
                             <connections>
                                 <action selector="logOutBtn:" destination="22v-zb-76Z" id="NIf-Wk-CWf"/>
@@ -602,7 +602,7 @@
         <!--PartOfCourse-->
         <scene sceneID="H1H-GM-yPk">
             <objects>
-                <viewController id="2JQ-Zr-pMy" userLabel="PartOfCourse" customClass="PartOfCourse" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2JQ-Zr-pMy" userLabel="PartOfCourse" customClass="PartOfCourseVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uih-wA-wWf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -636,6 +636,130 @@
             </objects>
             <point key="canvasLocation" x="2893.8931297709923" y="12.67605633802817"/>
         </scene>
+        <!--CouseMainPage-->
+        <scene sceneID="KJB-HL-2bt">
+            <objects>
+                <viewController id="LwT-Le-6i1" userLabel="CouseMainPage" customClass="CourseMainPageVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cph-IR-IDN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jkR-tI-pBp">
+                                <rect key="frame" x="10" y="768" width="366" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLR-hb-PDF" customClass="BottomButton" customModule="Ruhanka" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="dk2-tS-UnT"/>
+                                            <constraint firstAttribute="height" constant="50" id="efB-WU-0ho"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Марафон" image="home"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="home" imagePlacement="top" title="Марафон" imagePadding="5">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="9"/>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                            <attributedString key="attributedSubtitle"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="mainBottomButtonPressed:" destination="LwT-Le-6i1" eventType="touchUpInside" id="EG9-81-tkS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-of-27Q">
+                                        <rect key="frame" x="74" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="cMH-JP-o3h"/>
+                                            <constraint firstAttribute="height" constant="50" id="mYn-gH-7GA"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Марафон" image="home"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="yoga" imagePlacement="top" title="Йога" imagePadding="5">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="9"/>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                            <attributedString key="attributedSubtitle"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="yogaBottomButtonPressed:" destination="LwT-Le-6i1" eventType="touchUpInside" id="w3H-oV-Akj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ov-eV-How">
+                                        <rect key="frame" x="148" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="UJD-fY-j02"/>
+                                            <constraint firstAttribute="width" constant="70" id="eFb-wS-P3b"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Марафон" image="home"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="tracker" imagePlacement="top" title="Марафон" imagePadding="5">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="9"/>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                            <attributedString key="attributedSubtitle"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="trackerBottomButtonPressed:" destination="LwT-Le-6i1" eventType="touchUpInside" id="Zfb-KJ-Gcf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgO-bA-QlF">
+                                        <rect key="frame" x="222" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="YaY-Q8-ltd"/>
+                                            <constraint firstAttribute="height" constant="50" id="ax6-xC-IBq"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Марафон" image="home"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="herbs" imagePlacement="top" title="Марафон" imagePadding="5">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="9"/>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                            <attributedString key="attributedSubtitle"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="herbsBottomButtonPressed:" destination="LwT-Le-6i1" eventType="touchUpInside" id="Gev-TT-6Bk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKT-yY-ktJ">
+                                        <rect key="frame" x="296" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="ACa-9V-Bfd"/>
+                                            <constraint firstAttribute="height" constant="50" id="qXO-nT-cB4"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Марафон" image="home"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="social" imagePlacement="top" title="Марафон" imagePadding="5">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="9"/>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="9"/>
+                                            <attributedString key="attributedSubtitle"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="socialBottomPressed:" destination="LwT-Le-6i1" eventType="touchUpInside" id="5ge-et-g9r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QXD-zB-iZv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QXD-zB-iZv" firstAttribute="trailing" secondItem="jkR-tI-pBp" secondAttribute="trailing" constant="10" id="9Xf-p6-S4X"/>
+                            <constraint firstItem="jkR-tI-pBp" firstAttribute="leading" secondItem="QXD-zB-iZv" secondAttribute="leading" constant="10" id="FrO-Nr-W2h"/>
+                            <constraint firstItem="QXD-zB-iZv" firstAttribute="bottom" secondItem="jkR-tI-pBp" secondAttribute="bottom" id="GbP-4W-fa7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="herbsBottomButton" destination="DgO-bA-QlF" id="pGR-YB-RqY"/>
+                        <outlet property="mainBottomButton" destination="RLR-hb-PDF" id="GGS-s6-VRu"/>
+                        <outlet property="socialBottomButtom" destination="IKT-yY-ktJ" id="nGG-4U-82O"/>
+                        <outlet property="trackerBottomButton" destination="3ov-eV-How" id="o44-Qw-BHu"/>
+                        <outlet property="yogaBottomButton" destination="dPf-of-27Q" id="NTc-8y-vhc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gs4-3l-fvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3904.5801526717555" y="12.67605633802817"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="MnB-oG-XKF">
@@ -646,7 +770,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="t66-fg-QyG"/>
+        <segue reference="8ll-dt-k3a"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="addPhoto" width="100" height="100"/>
@@ -658,6 +782,11 @@
         <image name="eye.fill" catalog="system" width="128" height="80"/>
         <image name="eye.slash" catalog="system" width="128" height="84"/>
         <image name="facebook" width="25" height="25"/>
+        <image name="herbs" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="social" width="30" height="30"/>
+        <image name="tracker" width="30" height="30"/>
+        <image name="yoga" width="30" height="30.333333969116211"/>
         <namedColor name="Dark Grey">
             <color red="0.59200000762939453" green="0.59200000762939453" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
