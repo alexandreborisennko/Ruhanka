@@ -32,7 +32,7 @@ class AvailableCoursesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectButton(for: menuAllButtonOutlet,deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet])
+        selectButton(for: menuAllButtonOutlet,deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
         // Do any additional setup after loading the view.
         filteredCourses = availableCourses
         navigationItem.setHidesBackButton(true, animated: true) // hides back button
@@ -49,17 +49,17 @@ class AvailableCoursesVC: UIViewController {
     @IBAction func allButton(_ sender: UIButton) {
         filteredCourses = availableCourses
         tableView.reloadData()
-        selectButton(for: menuAllButtonOutlet, deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet])
+        selectButton(for: menuAllButtonOutlet, deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
     @IBAction func marafonButton(_ sender: UIButton) {
         filterCourses(courseStructure: .marafon)
-        selectButton(for: menuMarafonButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuRuhankaButtonOutlet])
+        selectButton(for: menuMarafonButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
     @IBAction func ruhankaButton(_ sender: UIButton) {
         filterCourses(courseStructure: .ruhanka)
-        selectButton(for: menuRuhankaButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuMarafonButtonOutlet])
+        selectButton(for: menuRuhankaButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuMarafonButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
 
@@ -69,19 +69,7 @@ class AvailableCoursesVC: UIViewController {
         tableView.reloadData()
     }
     
-    func selectButton(for button: UIButton, deselectButtons: [UIButton]) {
-        for deselectButton in deselectButtons {
-            deselectButton.isSelected = false
-        }
-        
-        button.isSelected = true
-        selectedButtonBar?.removeFromSuperview()
-        selectedButtonBar = UIView.init(frame: CGRect(x: 0.0, y: button.frame.size.height , width: button.frame.size.width, height: 3.0))
-        selectedButtonBar?.backgroundColor = UIColor(named: K.Colors.Pink)
-        button.addSubview(selectedButtonBar!)
-        
 
-    }
     
     @IBAction func logOutBtn(_ sender: UIBarButtonItem) {
         do {
@@ -157,5 +145,22 @@ extension UIImageView {
     func makeRoundCorners(byRadius rad: CGFloat) {
         self.layer.cornerRadius = rad
         self.clipsToBounds = true
+    }
+}
+
+extension UIViewController {
+    func selectButton(for button: UIButton, deselectButtons: [UIButton], selectedButtonBar:inout UIView?) {
+        
+        for deselectButton in deselectButtons {
+            deselectButton.isSelected = false
+        }
+        
+        button.isSelected = true
+        selectedButtonBar?.removeFromSuperview()
+        selectedButtonBar = UIView.init(frame: CGRect(x: 0.0, y: button.frame.size.height , width: button.frame.size.width, height: 3.0))
+        selectedButtonBar?.backgroundColor = UIColor(named: K.Colors.Pink)
+        button.addSubview(selectedButtonBar!)
+        
+
     }
 }

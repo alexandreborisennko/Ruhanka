@@ -13,10 +13,12 @@ class CoursePart: Course {
     var coursePart: String
     var coursePartImage: UIImage
     var coursePartLength: String
-    init(course: Course, coursePart: String, coursePartImage: UIImage, coursePartLength: String) {
+    var coursePartDescription: String
+    init(course: Course, coursePart: String, coursePartImage: UIImage, coursePartLength: String, coursePartDescriprtion: String) {
         self.coursePart = coursePart
         self.coursePartImage = coursePartImage
         self.coursePartLength = coursePartLength
+        self.coursePartDescription = coursePartDescriprtion
         
         super.init(courseImage: course.courseImage, courseLevel: course.courseLevel, courseType: course.courseType, courseBody: course.courseBody, courseTitle: course.courseTitle, courseAuthor: course.courseAuthor, courseLength: course.courseLength, courseStructure: course.courseStructure, courseNumber: course.courseNumber)
     }

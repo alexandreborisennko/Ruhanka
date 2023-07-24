@@ -16,6 +16,7 @@ struct K {
         static let emailToCourses = "EmailRegisterToCourses"
         static let loginToCorses = "LoginToCourses"
         static let availableCoursesToPartCourse = "AvailableCourseToPartOfCourse"
+        static let partOfCourseToCourseMainPage = "PartOfCourseToCourseMainPage"
     }
     
     struct Colors {

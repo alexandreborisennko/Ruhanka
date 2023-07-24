@@ -27,24 +27,18 @@ import UIKit
     
     }
 
-let easyLevel = LevelStruct(level: CourseProperties.Level.easy)
-let mediumLevel = LevelStruct(level: CourseProperties.Level.medium)
-let hardLevel = LevelStruct(level: CourseProperties.Level.hard)
 
-let yogaType = TypeStruct(type: CourseProperties.ProgramType.yoga)
-let fitnessType = TypeStruct(type: CourseProperties.ProgramType.fitness)
-let grassType = TypeStruct(type: CourseProperties.ProgramType.grass)
-
-let shouldersPart = BodyStruct(bodyPart: CourseProperties.BodyPart.shoulders)
-let loinPart = BodyStruct(bodyPart: CourseProperties.BodyPart.loin)
-let legsParts = BodyStruct(bodyPart: CourseProperties.BodyPart.legs)
 
 
 
 let myCourseParts =  [
-    CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 1 ", coursePartImage: #imageLiteral(resourceName: "course1_1"), coursePartLength: "10 днів"),
-     CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів"),
-    CoursePart(course: AvailableCourses.MarafonPlechey.main, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів")
+    CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 1 ", coursePartImage: #imageLiteral(resourceName: "course1_1"), coursePartLength: "10 днів", coursePartDescriprtion: """
+               В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів.
+               
+               Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!
+               """),
+     CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів",  coursePartDescriprtion: "В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів. Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!"),
+    CoursePart(course: AvailableCourses.MarafonPlechey.main, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів",  coursePartDescriprtion: "В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів. Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!")
     
 ]
 
