@@ -966,12 +966,12 @@
             </objects>
             <point key="canvasLocation" x="3904.5801526717555" y="12.67605633802817"/>
         </scene>
-        <!--View Controller-->
+        <!--Training TableVC-->
         <scene sceneID="Zcf-0c-SFb">
             <objects>
-                <viewController id="Mg5-P0-Rao" sceneMemberID="viewController">
+                <viewController id="Mg5-P0-Rao" customClass="TrainingTableVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxv-VR-cCp">
-                        <rect key="frame" x="0.0" y="0.0" width="396" height="184.33333333333334"/>
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="184"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c70-Zu-cKj">
@@ -989,10 +989,13 @@
                             <constraint firstAttribute="bottom" secondItem="c70-Zu-cKj" secondAttribute="bottom" id="W7f-94-4le"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="c70-Zu-cKj" id="Zt8-bG-SnE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baV-9n-GPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4812" y="-222"/>
+            <point key="canvasLocation" x="4810.6870229007627" y="-222.18309859154931"/>
         </scene>
     </scenes>
     <designables>
