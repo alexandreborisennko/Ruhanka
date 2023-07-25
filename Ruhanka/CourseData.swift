@@ -30,7 +30,6 @@ import UIKit
 
 
 
-
 let myCourseParts =  [
     CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 1 ", coursePartImage: #imageLiteral(resourceName: "course1_1"), coursePartLength: "10 днів", coursePartDescriprtion: """
                В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів.

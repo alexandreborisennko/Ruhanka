@@ -24,7 +24,8 @@ class PartOfCourseVC: UIViewController {
     
 }
 
-//filteredPartsOfCourse = partsOfCourse.filter {$0.courseNumber ==  filteredCourses[indexPath.row].courseNumber }
+
+//MARK: -   Extensions
 
 extension PartOfCourseVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,7 +74,8 @@ extension PartOfCourseVC: UITableViewDelegate {
           if let destinationVC = segue.destination as? CourseMainPageVC {
                if let indexPath = tableView.indexPathForSelectedRow {
                     let courseImage = filteredPartsOfCourse[indexPath.row].coursePartImage
-                    let  courseTitle = "\(filteredPartsOfCourse[indexPath.row].courseTitle).   \(filteredPartsOfCourse[indexPath.row].coursePart)"
+                    let  courseTitle = "\(filteredPartsOfCourse[indexPath.row].courseTitle)."
+                    let coursePart = filteredPartsOfCourse[indexPath.row].coursePart
                     let courseAuthor = filteredPartsOfCourse[indexPath.row].courseAuthor
                     let courseLength  = "·   \(filteredPartsOfCourse[indexPath.row].coursePartLength)"
                    var courseLevel = ""
@@ -96,6 +98,7 @@ extension PartOfCourseVC: UITableViewDelegate {
                    
                     destinationVC.courseImage = courseImage
                     destinationVC.courseTitle =  courseTitle
+                    destinationVC.coursePart = coursePart
                     destinationVC.courseAuthor = courseAuthor
                     destinationVC.courseLength = courseLength
                     destinationVC.courseLevel = courseLevel

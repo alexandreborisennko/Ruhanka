@@ -83,6 +83,7 @@ class AvailableCoursesVC: UIViewController {
     
 }
 
+//MARK: -  extensions
 
 extension AvailableCoursesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

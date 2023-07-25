@@ -15,28 +15,34 @@ class CourseMainPageVC: UIViewController {
     var courseLength: String?
     var courseLevel: String?
     var courseType: String?
+    var coursePart : String?
     var courseDescription: String?
     var selectedButtonBar: UIView?
     
     
+    
+    @IBOutlet weak var topHeaderOutlet: UILabel!
     @IBOutlet weak var mainBottomButton: BottomButton!
     @IBOutlet weak var yogaBottomButton: UIButton!
     @IBOutlet weak var trackerBottomButton: UIButton!
     @IBOutlet weak var herbsBottomButton: UIButton!
     @IBOutlet weak var socialBottomButtom: UIButton!
     @IBOutlet weak var topImage: UIImageView!
-  
+    @IBOutlet weak var topImageHeightConstant: NSLayoutConstraint!
+    
     @IBOutlet weak var topLevel: UILabel!
     @IBOutlet weak var topLength: UILabel!
     @IBOutlet weak var topAuthor: UILabel!
     @IBOutlet weak var topTitle: UILabel!
+    @IBOutlet weak var topPartTitle: UILabel!
     @IBOutlet weak var topDescription: UILabel!
     @IBOutlet weak var topType: UILabel!
     
+    @IBOutlet weak var hideButtonOutlet: UIButton!
+    @IBOutlet weak var topOutlet: UIStackView!
     @IBOutlet weak var trainingOutlet: UIButton!
     @IBOutlet weak var facialOutlet: UIButton!
     @IBOutlet weak var favoriteOutlet: UIButton!
-    @IBOutlet weak var testOutlet: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +65,19 @@ class CourseMainPageVC: UIViewController {
         topLength.text = courseLength
         topLevel.text = courseLevel
         topType.text = courseType
+        topPartTitle.text = coursePart
         topDescription.text = courseDescription
+        hideButtonOutlet.setTitle("Сховати деталі програми", for: .normal)
+        hideButtonOutlet.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        hideButtonOutlet.setTitle("Відкрити деталі програми", for: .selected)
+        hideButtonOutlet.setImage(UIImage(systemName: "arrow.down"), for: .selected)
+        
+        let topHeaderText = "Огляд програми"
+        let attributedString = NSMutableAttributedString(string: topHeaderText)
+        let range = NSRange(location: 0, length: topHeaderText.count)
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+        topHeaderOutlet.attributedText = attributedString
+
 
         selectButton(for: trainingOutlet, deselectButtons: [facialOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
     }
@@ -76,7 +94,18 @@ class CourseMainPageVC: UIViewController {
     }
     
     @IBAction func hideDescription(_ sender: UIButton) {
-        testOutlet.isHidden = true
+        if sender.isSelected {
+            topOutlet.isHidden = false
+            topImageHeightConstant.constant = 250
+
+        } else {
+            topOutlet.isHidden = true
+            topImageHeightConstant.constant = 0
+            view.layoutIfNeeded()
+        }
+        sender.isSelected = !sender.isSelected
+
+        
     }
     
     @IBAction func mainBottomButtonPressed(_ sender: BottomButton) {
