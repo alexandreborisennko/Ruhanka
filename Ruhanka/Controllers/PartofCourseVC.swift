@@ -95,6 +95,7 @@ extension PartOfCourseVC: UITableViewDelegate {
                        }
                    }
                    let courseDescription = filteredPartsOfCourse[indexPath.row].coursePartDescription
+                   let courseTrainings = filteredPartsOfCourse[indexPath.row].courseTrainings
                    
                     destinationVC.courseImage = courseImage
                     destinationVC.courseTitle =  courseTitle
@@ -104,6 +105,7 @@ extension PartOfCourseVC: UITableViewDelegate {
                     destinationVC.courseLevel = courseLevel
                     destinationVC.courseType = courseType
                     destinationVC.courseDescription = courseDescription
+                    destinationVC.courseTraining = courseTrainings
                    
                }
            }

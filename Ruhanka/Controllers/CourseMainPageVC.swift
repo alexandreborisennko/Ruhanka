@@ -18,6 +18,8 @@ class CourseMainPageVC: UIViewController {
     var coursePart : String?
     var courseDescription: String?
     var selectedButtonBar: UIView?
+    var courseTraining: [CoursePartBlock] = []
+
     
     
     
@@ -82,8 +84,15 @@ class CourseMainPageVC: UIViewController {
         selectButton(for: trainingOutlet, deselectButtons: [facialOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let childVC = segue.destination as? TrainingTableVC {
+                childVC.courseTraining = courseTraining
+            }
+        }
+    
     @IBAction func TrainingButton(_ sender: UIButton) {
         selectButton(for: trainingOutlet, deselectButtons: [facialOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+
     }
     
     @IBAction func facialButton(_ sender: UIButton) {
@@ -137,6 +146,16 @@ class BottomButton: UIButton  {
             backgroundColor = isSelected ?  UIColor.white : UIColor.white
         }
     }
+}
+
+extension UIViewController {
+    
+    func chooseMiddleMenuButton(for button: UIButton, deselectButtons: [UIButton], selectedButtonBar:inout UIView?) {
+        
+    }
+    
+    
+
 }
 
 
