@@ -27,6 +27,7 @@ class LogInVC: UIViewController, UITextFieldDelegate {
     @IBAction func forgetPassword(_ sender: UIButton) {
         resetPassword(from: self)
     }
+    
     @IBOutlet weak var emailOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
     
@@ -37,7 +38,12 @@ class LogInVC: UIViewController, UITextFieldDelegate {
                     createAlert(from: self, errorText: e.localizedDescription)
                     print(e)
                 } else {
-                    self.performSegue(withIdentifier: K.Segues.loginToCorses, sender: self)
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let vc = storyboard.instantiateViewController(withIdentifier: "AvailableCoursesVCIndentifier") as? AvailableCoursesVC {
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
                 }
             }
         }

@@ -66,51 +66,53 @@ extension PartOfCourseVC: UITableViewDataSource {
 
 extension PartOfCourseVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected
-        self.performSegue(withIdentifier: K.Segues.partOfCourseToCourseMainPage, sender: self)
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "CourseMainPageVCIdentifier") as? CourseMainPageVC {
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let courseImage = filteredPartsOfCourse[indexPath.row].coursePartImage
+                let  courseTitle = "\(filteredPartsOfCourse[indexPath.row].courseTitle)."
+                let coursePart = filteredPartsOfCourse[indexPath.row].coursePart
+                let courseAuthor = filteredPartsOfCourse[indexPath.row].courseAuthor
+                let courseLength  = "·   \(filteredPartsOfCourse[indexPath.row].coursePartLength)"
+                var courseLevel = ""
+                for (index,element) in filteredPartsOfCourse[indexPath.row].courseLevel.enumerated() {
+                    courseLevel += "\(element.level) "
+                    if index+1 < filteredPartsOfCourse[indexPath.row].courseLevel.count {
+                        courseLevel += "/ "
+                    } else {
+                        courseLevel += "  "
+                    }
+                }
+                var courseType = ""
+                for (index, element) in filteredPartsOfCourse[indexPath.row].courseType.enumerated() {
+                    courseType += "\(element.type)  "
+                    if index+1 < filteredPartsOfCourse[indexPath.row].courseType.count {
+                        courseType += "·  "
+                    }
+                }
+                let courseDescription = filteredPartsOfCourse[indexPath.row].coursePartDescription
+                let courseTrainings = filteredPartsOfCourse[indexPath.row].courseTrainings
+                
+                vc.courseImage = courseImage
+                vc.courseTitle =  courseTitle
+                vc.coursePart = coursePart
+                vc.courseAuthor = courseAuthor
+                vc.courseLength = courseLength
+                vc.courseLevel = courseLevel
+                vc.courseType = courseType
+                vc.courseDescription = courseDescription
+                vc.courseTraining = courseTrainings
+            }
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       if segue.identifier == K.Segues.partOfCourseToCourseMainPage {
-          if let destinationVC = segue.destination as? CourseMainPageVC {
-               if let indexPath = tableView.indexPathForSelectedRow {
-                    let courseImage = filteredPartsOfCourse[indexPath.row].coursePartImage
-                    let  courseTitle = "\(filteredPartsOfCourse[indexPath.row].courseTitle)."
-                    let coursePart = filteredPartsOfCourse[indexPath.row].coursePart
-                    let courseAuthor = filteredPartsOfCourse[indexPath.row].courseAuthor
-                    let courseLength  = "·   \(filteredPartsOfCourse[indexPath.row].coursePartLength)"
-                   var courseLevel = ""
-                   for (index,element) in filteredPartsOfCourse[indexPath.row].courseLevel.enumerated() {
-                       courseLevel += "\(element.level) "
-                       if index+1 < filteredPartsOfCourse[indexPath.row].courseLevel.count {
-                           courseLevel += "/ "
-                       } else {
-                           courseLevel += "  "
-                       }
-                   }
-                   var courseType = ""
-                   for (index, element) in filteredPartsOfCourse[indexPath.row].courseType.enumerated() {
-                       courseType += "\(element.type)  "
-                       if index+1 < filteredPartsOfCourse[indexPath.row].courseType.count {
-                           courseType += "·  "
-                       }
-                   }
-                   let courseDescription = filteredPartsOfCourse[indexPath.row].coursePartDescription
-                   let courseTrainings = filteredPartsOfCourse[indexPath.row].courseTrainings
-                   
-                    destinationVC.courseImage = courseImage
-                    destinationVC.courseTitle =  courseTitle
-                    destinationVC.coursePart = coursePart
-                    destinationVC.courseAuthor = courseAuthor
-                    destinationVC.courseLength = courseLength
-                    destinationVC.courseLevel = courseLevel
-                    destinationVC.courseType = courseType
-                    destinationVC.courseDescription = courseDescription
-                    destinationVC.courseTraining = courseTrainings
-                   
-               }
-           }
-        }
-    }
-
 }
 

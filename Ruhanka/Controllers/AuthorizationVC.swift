@@ -22,9 +22,25 @@ class AuthorizationVC: UIViewController {
 
     }
 
-    @IBOutlet weak var appleButton: UIButton!
-       
+    @IBAction func emailButton(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "EmailRegistrationVCIdentifier") as? EmailRegistrationVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
+    @IBAction func loginButton(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "LogInVCIdentifier") as? LogInVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+    
+    
+    @IBOutlet weak var appleButton: UIButton!
+        
 }
 
 

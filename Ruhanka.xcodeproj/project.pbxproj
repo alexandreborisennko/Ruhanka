@@ -30,6 +30,7 @@
 		04AEBA752A70579C00FDFD15 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEBA732A70579C00FDFD15 /* MainCell.swift */; };
 		04AEBA762A70579C00FDFD15 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AEBA742A70579C00FDFD15 /* MainCell.xib */; };
 		04AEBA782A70592100FDFD15 /* TrainingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEBA772A70592100FDFD15 /* TrainingTableVC.swift */; };
+		04AEBA7A2A72F10C00FDFD15 /* FaceCareTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEBA792A72F10C00FDFD15 /* FaceCareTableVC.swift */; };
 		C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		04AEBA732A70579C00FDFD15 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		04AEBA742A70579C00FDFD15 /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		04AEBA772A70592100FDFD15 /* TrainingTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTableVC.swift; sourceTree = "<group>"; };
+		04AEBA792A72F10C00FDFD15 /* FaceCareTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCareTableVC.swift; sourceTree = "<group>"; };
 		3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.release.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.release.xcconfig"; sourceTree = "<group>"; };
 		6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.debug.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.debug.xcconfig"; sourceTree = "<group>"; };
 		88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruhanka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 		04558DE72A55A2E60029EFF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04AEBA792A72F10C00FDFD15 /* FaceCareTableVC.swift */,
 				04AEBA772A70592100FDFD15 /* TrainingTableVC.swift */,
 				047AE2652A6817C1006C7902 /* CourseMainPageVC.swift */,
 				04AE595C2A652820004A00DA /* PartofCourseVC.swift */,
@@ -289,6 +292,7 @@
 				044121F12A5F271B00039C77 /* Constants.swift in Sources */,
 				044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */,
 				04AEBA782A70592100FDFD15 /* TrainingTableVC.swift in Sources */,
+				04AEBA7A2A72F10C00FDFD15 /* FaceCareTableVC.swift in Sources */,
 				047AE2662A6817C1006C7902 /* CourseMainPageVC.swift in Sources */,
 				044121EF2A5F19DB00039C77 /* AvailableCoursesModel.swift in Sources */,
 				04AE595F2A653D12004A00DA /* CoursePartModel.swift in Sources */,

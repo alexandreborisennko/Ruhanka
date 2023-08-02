@@ -15,12 +15,7 @@ struct K {
     static let mainReusableCell = "MainReusableCell"
     static let mainNibName = "MainCell"
     
-    struct Segues {
-        static let emailToCourses = "EmailRegisterToCourses"
-        static let loginToCorses = "LoginToCourses"
-        static let availableCoursesToPartCourse = "AvailableCourseToPartOfCourse"
-        static let partOfCourseToCourseMainPage = "PartOfCourseToCourseMainPage"
-    }
+
     
     struct Colors {
         static let Pink = "Pink"

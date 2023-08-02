@@ -21,6 +21,7 @@ class CourseMainPageVC: UIViewController {
     var courseTraining: [CoursePartBlock] = []
 
     
+    @IBOutlet weak var containerTraining: UIView!
     
     
     @IBOutlet weak var topHeaderOutlet: UILabel!
@@ -43,7 +44,7 @@ class CourseMainPageVC: UIViewController {
     @IBOutlet weak var hideButtonOutlet: UIButton!
     @IBOutlet weak var topOutlet: UIStackView!
     @IBOutlet weak var trainingOutlet: UIButton!
-    @IBOutlet weak var facialOutlet: UIButton!
+    @IBOutlet weak var faceCareOutlet: UIButton!
     @IBOutlet weak var favoriteOutlet: UIButton!
     
     override func viewDidLoad() {
@@ -79,9 +80,9 @@ class CourseMainPageVC: UIViewController {
         let range = NSRange(location: 0, length: topHeaderText.count)
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
         topHeaderOutlet.attributedText = attributedString
+        
 
-
-        selectButton(for: trainingOutlet, deselectButtons: [facialOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+        selectButton(for: trainingOutlet, deselectButtons: [faceCareOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,15 +92,15 @@ class CourseMainPageVC: UIViewController {
         }
     
     @IBAction func TrainingButton(_ sender: UIButton) {
-        selectButton(for: trainingOutlet, deselectButtons: [facialOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+        selectButton(for: trainingOutlet, deselectButtons: [faceCareOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
 
     }
     
-    @IBAction func facialButton(_ sender: UIButton) {
-        selectButton(for: facialOutlet, deselectButtons: [trainingOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+    @IBAction func faceCareButton(_ sender: UIButton) {
+        selectButton(for: faceCareOutlet, deselectButtons: [trainingOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
     }
     @IBAction func favoriteButton(_ sender: UIButton) {
-        selectButton(for: favoriteOutlet, deselectButtons: [trainingOutlet,facialOutlet], selectedButtonBar: &selectedButtonBar)
+        selectButton(for: favoriteOutlet, deselectButtons: [trainingOutlet,faceCareOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
     @IBAction func hideDescription(_ sender: UIButton) {
@@ -118,7 +119,7 @@ class CourseMainPageVC: UIViewController {
     }
     
     @IBAction func mainBottomButtonPressed(_ sender: BottomButton) {
-     
+
         sender.isSelected = true
         
     }

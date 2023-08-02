@@ -77,9 +77,11 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
                         createAlert(from: self, errorText: e.localizedDescription) //show alert with error
                         
                     } else {
-                            
-                            //navigate to next screen
-                        self.performSegue(withIdentifier: K.Segues.emailToCourses, sender: self)
+                                                    
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        if let vc = storyboard.instantiateViewController(withIdentifier: "AvailableCoursesVCIndentifier") as? AvailableCoursesVC {
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
                     }
                 }
                     

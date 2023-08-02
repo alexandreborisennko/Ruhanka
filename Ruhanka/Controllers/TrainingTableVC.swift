@@ -38,7 +38,6 @@ extension TrainingTableVC: UITableViewDataSource {
         cell.mainName.text =  courseTraining[indexPath.row].blockName
         cell.mainImage.image = courseTraining[indexPath.row].blockImage
         cell.mainImage.makeRoundCorners(byRadius: 20)
-       // cell.mainImage.image = UIImage(named: "training1")
         return cell
         
     }

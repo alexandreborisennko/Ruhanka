@@ -125,17 +125,13 @@ extension AvailableCoursesVC: UITableViewDataSource {
 extension AvailableCoursesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected
         
-       self.performSegue(withIdentifier: K.Segues.availableCoursesToPartCourse, sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.Segues.availableCoursesToPartCourse {
-            if let destinationVC = segue.destination as? PartOfCourseVC {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let courseTitle = filteredCourses[indexPath.row].courseTitle
-                    destinationVC.courseTitle = courseTitle
-                }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "PartOfCourseIdentifier") as? PartOfCourseVC {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let courseTitle = filteredCourses[indexPath.row].courseTitle
+                vc.courseTitle = courseTitle
             }
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 
