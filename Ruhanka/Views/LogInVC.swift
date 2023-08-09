@@ -8,24 +8,22 @@
 import UIKit
 import FirebaseAuth
 
-class LogInVC: UIViewController, UITextFieldDelegate {
+class LogInVC: UIViewController, UITextFieldDelegate, CreateAlert {
+    private let logInModel = LogInModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        navigationController?.navigationBar.barStyle = .default
-        makeRoundCornersForTextOutlet(for: emailOutlet,passwordOutlet)
+        setUI()
         addTapGestureToDismissKeyboard() // function to dismiss keyboard on tap
         emailOutlet.delegate = self
         passwordOutlet.delegate = self
-
     }
 
     @IBOutlet weak var passwordResetHint: UILabel!
     
     
     @IBAction func forgetPassword(_ sender: UIButton) {
-        resetPassword(from: self)
+        logInModel.resetPassword(from: self)
     }
     
     @IBOutlet weak var emailOutlet: UITextField!
@@ -35,12 +33,12 @@ class LogInVC: UIViewController, UITextFieldDelegate {
         if let email = emailOutlet.text, let password = passwordOutlet.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    createAlert(from: self, errorText: e.localizedDescription)
+                    self.createAlert(from: self, errorText: e.localizedDescription)
                     print(e)
                 } else {
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    if let vc = storyboard.instantiateViewController(withIdentifier: "AvailableCoursesVCIndentifier") as? AvailableCoursesVC {
+                    if let vc = storyboard.instantiateViewController(withIdentifier: AvailableCoursesVC.identifier) as? AvailableCoursesVC {
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
                     
@@ -57,5 +55,13 @@ class LogInVC: UIViewController, UITextFieldDelegate {
     
 
 
+}
+
+extension LogInVC {
+    
+    private func setUI() {
+        navigationController?.navigationBar.barStyle = .default
+        makeRoundCornersForTextOutlet(for: emailOutlet,passwordOutlet)
+    }
 }
 

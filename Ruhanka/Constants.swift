@@ -9,13 +9,6 @@ import Foundation
 
 struct K {
     
-    static let reusableCell = "ReusableCell"
-    static let cellNibName = "CourseCell"
-    
-    static let mainReusableCell = "MainReusableCell"
-    static let mainNibName = "MainCell"
-    
-
     
     struct Colors {
         static let Pink = "Pink"

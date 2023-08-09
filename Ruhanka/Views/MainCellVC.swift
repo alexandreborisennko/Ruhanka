@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCell: UITableViewCell {
+class MainCellVC: UITableViewCell {
 
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainName: UILabel!
@@ -23,4 +23,10 @@ class MainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension MainCellVC {
+    static func nib() -> UINib {
+        return UINib(nibName: "MainCell", bundle: nil)
+    }
 }

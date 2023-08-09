@@ -8,11 +8,12 @@
 import UIKit
 import FirebaseAuth
 
-class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
-    
+class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate, CreateAlert {
 
-    @IBOutlet weak var imageView: UIImageView!
     
+    private let emailRegistrationModel = EmailRegistrationModel()
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var passwordOutlet: UITextField!
     @IBOutlet weak var emailFieldOutlet: UITextField!
     @IBOutlet weak var nameOutlet: UITextField!
@@ -20,24 +21,17 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
     @IBOutlet weak var birthDateOutlet: UITextField!
     @IBOutlet weak var checkboxOutlet: UIButton!
     @IBOutlet weak var passwordHint: UILabel!
-    
     @IBOutlet weak var checkboxText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        navigationController?.navigationBar.barStyle = .default
-
-        makeRoundCornersForTextOutlet(for: emailFieldOutlet,passwordOutlet,nameOutlet,surnameOutlet,birthDateOutlet)
-        
+        setUI()
         emailFieldOutlet.delegate = self // setting self as delegate to use textFieldShouldReturn
         passwordOutlet.delegate  = self
         nameOutlet.delegate = self
         surnameOutlet.delegate = self
         birthDateOutlet.delegate = self
-        
         addTapGestureToDismissKeyboard() // function to dismiss keyboard on tap
-        
     }
     
 
@@ -66,20 +60,20 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
 
         
         if let email = emailFieldOutlet.text, let password = passwordOutlet.text {
-            let isStrongPassword = checkPasswordStrength(password)
-            
+            let isStrongPassword = emailRegistrationModel.checkPasswordStrength(password)
+                        
             if isStrongPassword {
                 
                 // perform checking if checkbox is enabled
                 if self.checkboxOutlet.isSelected {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let e = error {
-                        createAlert(from: self, errorText: e.localizedDescription) //show alert with error
+                        self.createAlert(from: self, errorText: e.localizedDescription) //show alert with error
                         
                     } else {
                                                     
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        if let vc = storyboard.instantiateViewController(withIdentifier: "AvailableCoursesVCIndentifier") as? AvailableCoursesVC {
+                        if let vc = storyboard.instantiateViewController(withIdentifier: AvailableCoursesVC.identifier) as? AvailableCoursesVC {
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }
@@ -100,6 +94,14 @@ class EmailRegistrationVC: UIViewController, UINavigationControllerDelegate, UIT
 
 
 
+}
+
+extension EmailRegistrationVC {
+    
+   private func setUI() {
+        navigationController?.navigationBar.barStyle = .default
+        makeRoundCornersForTextOutlet(for: emailFieldOutlet,passwordOutlet,nameOutlet,surnameOutlet,birthDateOutlet)
+    }
 }
 
 

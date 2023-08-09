@@ -8,8 +8,8 @@
 import UIKit
 
 class AuthorizationVC: UIViewController {
+    @IBOutlet weak var appleButton: UIButton!
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barStyle = .black
@@ -17,30 +17,24 @@ class AuthorizationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-
     }
 
     @IBAction func emailButton(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "EmailRegistrationVCIdentifier") as? EmailRegistrationVC {
+        if let vc = storyboard.instantiateViewController(withIdentifier: EmailRegistrationVC.identifier) as? EmailRegistrationVC {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     @IBAction func loginButton(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "LogInVCIdentifier") as? LogInVC {
+        if let vc = storyboard.instantiateViewController(withIdentifier: LogInVC.identifier) as? LogInVC {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
     
-    
-    @IBOutlet weak var appleButton: UIButton!
-        
 }
 
 

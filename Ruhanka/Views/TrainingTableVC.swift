@@ -8,17 +8,14 @@
 import UIKit
 
 class TrainingTableVC: UIViewController {
-    var courseTraining: [CoursePartBlock] = []
+   internal var courseTraining: [CoursePartBlock] = []
     
- 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: K.mainNibName, bundle: nil), forCellReuseIdentifier: K.mainReusableCell)
-        // Do any additional setup after loading the view.
+        tableView.register(MainCellVC.nib(), forCellReuseIdentifier: MainCellVC.identifier)
     }
     
 
@@ -33,7 +30,9 @@ extension TrainingTableVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.mainReusableCell, for: indexPath) as! MainCell //create reusable cell with all properties of custom cell
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: MainCellVC.identifier, for: indexPath) as? MainCellVC  else {
+            return UITableViewCell()
+        }
         cell.mainTag.text = courseTraining[indexPath.row].blockTag
         cell.mainName.text =  courseTraining[indexPath.row].blockName
         cell.mainImage.image = courseTraining[indexPath.row].blockImage
