@@ -10,15 +10,8 @@ import FirebaseAuth
 
 class AvailableCoursesVC: UIViewController, CreateAlert {
     
-  private  var selectedButtonBar: UIView? = nil
-  private  var filteredCourses: [Course] = []
-  private var availableCourses: [Course] {                        //computed variable
-        return  [AvailableCourses.marafonNog,
-                 AvailableCourses.RuhankaBitsepsa.main,
-                 AvailableCourses.MarafonNog2.main,
-                 AvailableCourses.MarafonPlechey.main,
-                 AvailableCourses.RuhankaKopchic.main]
-    }
+    var viewModel : AvailableCoursesViewModelType?
+    private  var selectedButtonBar: UIView? = nil
     
     @IBOutlet weak var menuAllButtonOutlet: UIButton!
     @IBOutlet weak var menuMarafonButtonOutlet: UIButton!
@@ -28,12 +21,12 @@ class AvailableCoursesVC: UIViewController, CreateAlert {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = AvailableCoursesViewModel()
         setUI()
-        filteredCourses = availableCourses
+        viewModel?.setDefaultFilterCourses()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CourseCellVC.nib(), forCellReuseIdentifier: CourseCellVC.identifier)
-      
+        tableView.register(CourseCell.nib(), forCellReuseIdentifier: CourseCell.identifier)
     }
     
 
@@ -41,18 +34,20 @@ class AvailableCoursesVC: UIViewController, CreateAlert {
     
 
     @IBAction func allButton(_ sender: UIButton) {
-        filteredCourses = availableCourses
+        viewModel?.setDefaultFilterCourses()
         tableView.reloadData()
         selectButton(for: menuAllButtonOutlet, deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
     @IBAction func marafonButton(_ sender: UIButton) {
-        filterCourses(courseStructure: .marafon)
+        viewModel?.filterCourses(courseStructure: .marafon)
+       
         selectButton(for: menuMarafonButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
     @IBAction func ruhankaButton(_ sender: UIButton) {
-        filterCourses(courseStructure: .ruhanka)
+        viewModel?.filterCourses(courseStructure: .ruhanka)
+        tableView.reloadData()
         selectButton(for: menuRuhankaButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuMarafonButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
@@ -67,23 +62,28 @@ class AvailableCoursesVC: UIViewController, CreateAlert {
         
     }
     
+
+    
 }
+
+
 
 //MARK: -  TableViewDataSource
 
 extension AvailableCoursesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredCourses.count
+        return viewModel?.numberOfRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCellVC.identifier, for: indexPath) as? CourseCellVC else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCell.identifier, for: indexPath) as? CourseCell,
+              let viewModel = viewModel else {
             return UITableViewCell()
         }
-            let model = filteredCourses[indexPath.row]
-            let viewModel   = CourseCellViewModel(courseImage: model.courseImage, courseLevel: model.courseLevel, courseType: model.courseType, courseBody: model.courseBody, courseTitle: model.courseTitle, courseAuthor: model.courseAuthor, courseLength: model.courseLength)
-            cell.setCell(with: viewModel)
+        
+        guard let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath) else { return UITableViewCell() }
+        
+        cell.setCell(withViewModel: cellViewModel)
            
         return cell
     }
@@ -101,7 +101,8 @@ extension AvailableCoursesVC: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: PartOfCourseVC.identifier) as? PartOfCourseVC {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let courseTitle = filteredCourses[indexPath.row].courseTitle
+                guard let viewModel = viewModel, let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath) else { return  }
+                let courseTitle =  cellViewModel.courseTitle
                 vc.courseTitle = courseTitle
             }
             self.navigationController?.pushViewController(vc, animated: true)
@@ -121,10 +122,7 @@ extension AvailableCoursesVC {
     }
     
     
-   private func filterCourses(courseStructure type: Course.CourseStructure) {
-        filteredCourses = availableCourses.filter { $0.courseStructure == type }
-        tableView.reloadData()
-    }
+
 }
 
 

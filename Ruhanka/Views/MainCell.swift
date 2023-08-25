@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCellVC: UITableViewCell {
+class MainCell: UITableViewCell {
 
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainName: UILabel!
@@ -25,7 +25,7 @@ class MainCellVC: UITableViewCell {
     
 }
 
-extension MainCellVC {
+extension MainCell {
     static func nib() -> UINib {
         return UINib(nibName: "MainCell", bundle: nil)
     }

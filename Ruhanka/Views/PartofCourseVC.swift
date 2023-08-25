@@ -19,7 +19,7 @@ class PartOfCourseVC: UIViewController, CreateAlert {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CourseCellVC.nib(), forCellReuseIdentifier: CourseCellVC.identifier)
+        tableView.register(CourseCell.nib(), forCellReuseIdentifier: CourseCell.identifier)
         filteredPartsOfCourse = allPartsOfCourse.filter {$0.courseTitle == courseTitle}
     }
     
@@ -44,13 +44,13 @@ extension PartOfCourseVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCellVC.identifier, for: indexPath) as? CourseCellVC else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCell.identifier, for: indexPath) as? CourseCell else {
             return UITableViewCell()
         }
         
-        let model = filteredPartsOfCourse[indexPath.row]
+       /* let model = filteredPartsOfCourse[indexPath.row]
         let viewModel = CourseCellViewModel(courseImage: model.coursePartImage, courseLevel: model.courseLevel, courseType: model.courseType, courseBody: model.courseBody, courseTitle: model.courseTitle, courseAuthor: model.courseAuthor, courseLength: model.courseLength)
-        cell.setCell(with: viewModel)
+        cell.setCell(with: viewModel) */
     // не відображаєтся частина курса зараз - треба окрему вьюмодел?
            
         return cell

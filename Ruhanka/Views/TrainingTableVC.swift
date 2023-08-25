@@ -15,7 +15,7 @@ class TrainingTableVC: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(MainCellVC.nib(), forCellReuseIdentifier: MainCellVC.identifier)
+        tableView.register(MainCell.nib(), forCellReuseIdentifier: MainCell.identifier)
     }
     
 
@@ -30,7 +30,7 @@ extension TrainingTableVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard  let cell = tableView.dequeueReusableCell(withIdentifier: MainCellVC.identifier, for: indexPath) as? MainCellVC  else {
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: MainCell.identifier, for: indexPath) as? MainCell  else {
             return UITableViewCell()
         }
         cell.mainTag.text = courseTraining[indexPath.row].blockTag
