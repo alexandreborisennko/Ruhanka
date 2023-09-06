@@ -8,11 +8,16 @@
 import UIKit
 import FirebaseAuth
 
-class AvailableCoursesVC: UIViewController, CreateAlert {
+protocol AvailableCoursesViewModelDelegate: AnyObject {
+    func didChangeBackgroundColor(_ color: UIColor)
+}
+
+class AvailableCoursesVC: UIViewController, CreateAlert, AvailableCoursesViewModelDelegate  {
     
-    var viewModel : AvailableCoursesViewModelType?
+    private var viewModel : AvailableCoursesViewModelType?
     private  var selectedButtonBar: UIView? = nil
     
+    @IBOutlet var myView: UIView!
     @IBOutlet weak var menuAllButtonOutlet: UIButton!
     @IBOutlet weak var menuMarafonButtonOutlet: UIButton!
     @IBOutlet weak var menuRuhankaButtonOutlet: UIButton!
@@ -27,6 +32,9 @@ class AvailableCoursesVC: UIViewController, CreateAlert {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CourseCell.nib(), forCellReuseIdentifier: CourseCell.identifier)
+        
+        myView.backgroundColor = viewModel?.backgroundColor
+        viewModel?.delegate = self
     }
     
 
@@ -41,7 +49,7 @@ class AvailableCoursesVC: UIViewController, CreateAlert {
     
     @IBAction func marafonButton(_ sender: UIButton) {
         viewModel?.filterCourses(courseStructure: .marafon)
-       
+        tableView.reloadData()
         selectButton(for: menuMarafonButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
@@ -51,18 +59,20 @@ class AvailableCoursesVC: UIViewController, CreateAlert {
         selectButton(for: menuRuhankaButtonOutlet,deselectButtons: [menuAllButtonOutlet,menuMarafonButtonOutlet], selectedButtonBar: &selectedButtonBar)
     }
     
-
+  
+    
     @IBAction func logOutBtn(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)// go to firsrt VC in stack
-        } catch let signOutError as NSError {
-            self.createAlert(from: self, errorText: signOutError.localizedDescription)
-        }
-        
+        logOut()
+
     }
     
-
+    @IBAction func changeColor(_ sender: UIButton) {
+        viewModel?.changeColor()
+    }
+    
+    func didChangeBackgroundColor(_ color: UIColor) {
+        myView.backgroundColor = color
+    }
     
 }
 
@@ -80,10 +90,8 @@ extension AvailableCoursesVC: UITableViewDataSource {
               let viewModel = viewModel else {
             return UITableViewCell()
         }
-        
-        guard let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath) else { return UITableViewCell() }
-        
-        cell.setCell(withViewModel: cellViewModel)
+        viewModel.setCellLabels(forIndexPath: indexPath)
+        cell.setCell(withViewModel: viewModel)
            
         return cell
     }
@@ -100,11 +108,10 @@ extension AvailableCoursesVC: UITableViewDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: PartOfCourseVC.identifier) as? PartOfCourseVC {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                guard let viewModel = viewModel, let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath) else { return  }
-                let courseTitle =  cellViewModel.courseTitle
+           
+                guard let viewModel = viewModel, let courseTitle = viewModel.courseTitle  else { return  }
                 vc.courseTitle = courseTitle
-            }
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -112,13 +119,26 @@ extension AvailableCoursesVC: UITableViewDelegate {
 }
 
 
-//MARK: -   SetUI
-
 extension AvailableCoursesVC {
-    
+
+    //MARK: -   SetUI
+
    private func setUI() {
         navigationItem.setHidesBackButton(true, animated: true) // hides back button
         selectButton(for: menuAllButtonOutlet,deselectButtons: [menuMarafonButtonOutlet,menuRuhankaButtonOutlet], selectedButtonBar: &selectedButtonBar)
+    }
+    
+    //MARK: -  logOut
+
+    
+    private func logOut() {
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)// go to firsrt VC in stack
+        } catch let signOutError as NSError {
+            self.createAlert(from: self, errorText: signOutError.localizedDescription)
+        }
+        
     }
     
     

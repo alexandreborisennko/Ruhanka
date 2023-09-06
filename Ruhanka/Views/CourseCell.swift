@@ -37,7 +37,7 @@ extension CourseCell {
         return UINib(nibName: "CourseCell", bundle: nil)
     }
     
-    public func setCell (withViewModel viewModel: CourseCellViewModelType) {
+    public func setCell (withViewModel viewModel: AvailableCoursesViewModelType) {
         
        /* if let coursePart =  course as? CoursePart { //
             courseTitle.text = "\(coursePart.courseTitle).   \(coursePart.coursePart)"

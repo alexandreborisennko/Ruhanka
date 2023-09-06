@@ -26,7 +26,6 @@
 		046A737F2A7AD89200B90024 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A737E2A7AD89200B90024 /* ExtensionFile.swift */; };
 		046A73852A83EFCF00B90024 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A73842A83EFCF00B90024 /* LogInModel.swift */; };
 		046A73872A84189D00B90024 /* AvailableCoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A73862A84189D00B90024 /* AvailableCoursesViewModel.swift */; };
-		046A73B42A87A25400B90024 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A73B32A87A25400B90024 /* LogInViewModel.swift */; };
 		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
 		047AE2662A6817C1006C7902 /* CourseMainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AE2652A6817C1006C7902 /* CourseMainPageVC.swift */; };
 		04AE595D2A652820004A00DA /* PartofCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE595C2A652820004A00DA /* PartofCourseVC.swift */; };
@@ -36,8 +35,6 @@
 		04AEBA782A70592100FDFD15 /* TrainingTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEBA772A70592100FDFD15 /* TrainingTableVC.swift */; };
 		04AEBA7A2A72F10C00FDFD15 /* FaceCareTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEBA792A72F10C00FDFD15 /* FaceCareTableVC.swift */; };
 		04DC755D2A988556008F07E2 /* AvailableCoursesViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC755C2A988556008F07E2 /* AvailableCoursesViewModelType.swift */; };
-		04DC755F2A98A484008F07E2 /* CourseCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC755E2A98A484008F07E2 /* CourseCellViewModelType.swift */; };
-		04DC75612A993032008F07E2 /* CourceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DC75602A993032008F07E2 /* CourceCellViewModel.swift */; };
 		C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +60,6 @@
 		046A737E2A7AD89200B90024 /* ExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
 		046A73842A83EFCF00B90024 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		046A73862A84189D00B90024 /* AvailableCoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesViewModel.swift; sourceTree = "<group>"; };
-		046A73B32A87A25400B90024 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		047AE2652A6817C1006C7902 /* CourseMainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMainPageVC.swift; sourceTree = "<group>"; };
 		04AE595C2A652820004A00DA /* PartofCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartofCourseVC.swift; sourceTree = "<group>"; };
@@ -73,8 +69,6 @@
 		04AEBA772A70592100FDFD15 /* TrainingTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTableVC.swift; sourceTree = "<group>"; };
 		04AEBA792A72F10C00FDFD15 /* FaceCareTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCareTableVC.swift; sourceTree = "<group>"; };
 		04DC755C2A988556008F07E2 /* AvailableCoursesViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesViewModelType.swift; sourceTree = "<group>"; };
-		04DC755E2A98A484008F07E2 /* CourseCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellViewModelType.swift; sourceTree = "<group>"; };
-		04DC75602A993032008F07E2 /* CourceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourceCellViewModel.swift; sourceTree = "<group>"; };
 		3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.release.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.release.xcconfig"; sourceTree = "<group>"; };
 		6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.debug.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.debug.xcconfig"; sourceTree = "<group>"; };
 		88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruhanka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				046A73862A84189D00B90024 /* AvailableCoursesViewModel.swift */,
-				046A73B32A87A25400B90024 /* LogInViewModel.swift */,
-				04DC75602A993032008F07E2 /* CourceCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -181,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				04DC755C2A988556008F07E2 /* AvailableCoursesViewModelType.swift */,
-				04DC755E2A98A484008F07E2 /* CourseCellViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -342,13 +333,10 @@
 				047AE2662A6817C1006C7902 /* CourseMainPageVC.swift in Sources */,
 				044121EF2A5F19DB00039C77 /* AvailableCoursesModel.swift in Sources */,
 				04DC755D2A988556008F07E2 /* AvailableCoursesViewModelType.swift in Sources */,
-				04DC755F2A98A484008F07E2 /* CourseCellViewModelType.swift in Sources */,
 				04AE595F2A653D12004A00DA /* CoursePartModel.swift in Sources */,
 				041E91FF2A54388A00233723 /* AuthorizationVC.swift in Sources */,
 				041E91FB2A54388A00233723 /* AppDelegate.swift in Sources */,
-				04DC75612A993032008F07E2 /* CourceCellViewModel.swift in Sources */,
 				0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */,
-				046A73B42A87A25400B90024 /* LogInViewModel.swift in Sources */,
 				04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */,
 				041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */,
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,
