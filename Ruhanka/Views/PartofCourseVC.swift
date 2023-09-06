@@ -10,17 +10,18 @@ import FirebaseAuth
 
 class PartOfCourseVC: UIViewController, CreateAlert {
     internal var courseTitle: String = ""
-    private var allPartsOfCourse = myCourseParts
-    private var filteredPartsOfCourse: [CoursePart] = []
+    private var viewModel: PartofCourseViewModel?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = PartofCourseViewModel()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CourseCell.nib(), forCellReuseIdentifier: CourseCell.identifier)
-        filteredPartsOfCourse = allPartsOfCourse.filter {$0.courseTitle == courseTitle}
+        viewModel?.filterPartOfCourse(title: courseTitle)
+        
     }
     
     @IBAction func logOutBtn(_ sender: UIBarButtonItem) {
@@ -40,18 +41,18 @@ class PartOfCourseVC: UIViewController, CreateAlert {
 
 extension PartOfCourseVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredPartsOfCourse.count
+        return viewModel?.numberOfRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCell.identifier, for: indexPath) as? CourseCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCell.identifier, for: indexPath) as? CourseCell,
+              let viewModel = viewModel else {
             return UITableViewCell()
         }
         
-       /* let model = filteredPartsOfCourse[indexPath.row]
-        let viewModel = CourseCellViewModel(courseImage: model.coursePartImage, courseLevel: model.courseLevel, courseType: model.courseType, courseBody: model.courseBody, courseTitle: model.courseTitle, courseAuthor: model.courseAuthor, courseLength: model.courseLength)
-        cell.setCell(with: viewModel) */
-    // не відображаєтся частина курса зараз - треба окрему вьюмодел?
+        viewModel.setCellLabels(forIndexPath: indexPath)
+       
+        cell.setCell(withViewModel: viewModel)
            
         return cell
     }
@@ -68,13 +69,9 @@ extension PartOfCourseVC: UITableViewDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: CourseMainPageVC.identifier) as? CourseMainPageVC {
-            
-                if let indexPath = tableView.indexPathForSelectedRow {
-
-                let course = filteredPartsOfCourse[indexPath.row]
-                vc.setCourse(for: course)
-                
-            }
+                    guard let indexPath = tableView.indexPathForSelectedRow ,
+                          let course = viewModel?.getCurrentCourse(forIndexPath: indexPath) else { return  }
+                    vc.setCourse(for: course)
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

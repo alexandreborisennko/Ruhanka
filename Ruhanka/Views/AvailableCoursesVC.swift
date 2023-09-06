@@ -14,7 +14,7 @@ protocol AvailableCoursesViewModelDelegate: AnyObject {
 
 class AvailableCoursesVC: UIViewController, CreateAlert, AvailableCoursesViewModelDelegate  {
     
-    private var viewModel : AvailableCoursesViewModelType?
+    private var viewModel : AvailableCoursesViewModel?
     private  var selectedButtonBar: UIView? = nil
     
     @IBOutlet var myView: UIView!
@@ -92,7 +92,7 @@ extension AvailableCoursesVC: UITableViewDataSource {
         }
         viewModel.setCellLabels(forIndexPath: indexPath)
         cell.setCell(withViewModel: viewModel)
-           
+
         return cell
     }
     
@@ -109,7 +109,8 @@ extension AvailableCoursesVC: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: PartOfCourseVC.identifier) as? PartOfCourseVC {
            
-                guard let viewModel = viewModel, let courseTitle = viewModel.courseTitle  else { return  }
+                guard let viewModel = viewModel  else { return  }
+                let courseTitle = viewModel.getCurrentCourse(forIndexPath: indexPath).courseTitle
                 vc.courseTitle = courseTitle
             
             self.navigationController?.pushViewController(vc, animated: true)

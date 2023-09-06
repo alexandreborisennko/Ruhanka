@@ -8,7 +8,7 @@
 import UIKit
 
 
-class AvailableCoursesViewModel: AvailableCoursesViewModelType {
+class AvailableCoursesViewModel: AvailableCoursesViewModelType, CellFieldsModelType {
     
     var backgroundColor: UIColor = .white
     weak var delegate: AvailableCoursesViewModelDelegate?
@@ -75,6 +75,7 @@ class AvailableCoursesViewModel: AvailableCoursesViewModelType {
             }
         }
         courseType = type
+        
         courseBody = course.courseBody
         courseTitle = course.courseTitle
         courseAuthor = course.courseAuthor
@@ -82,5 +83,11 @@ class AvailableCoursesViewModel: AvailableCoursesViewModelType {
     
     }
     
+    func getCurrentCourse(forIndexPath indexPath: IndexPath)  -> Course{
+        return filteredCourses[indexPath.row]
+    }
+
+    
+
 
 }

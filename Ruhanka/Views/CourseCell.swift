@@ -37,13 +37,8 @@ extension CourseCell {
         return UINib(nibName: "CourseCell", bundle: nil)
     }
     
-    public func setCell (withViewModel viewModel: AvailableCoursesViewModelType) {
-        
-       /* if let coursePart =  course as? CoursePart { //
-            courseTitle.text = "\(coursePart.courseTitle).   \(coursePart.coursePart)"
-            courseMainImage.image = coursePart.coursePartImage */
-            
-        
+    public func setCell (withViewModel viewModel:  CellFieldsModelType) {
+             
         courseTitle.text = viewModel.courseTitle
         courseMainImage.image = viewModel.courseImage
         courseAuthor.text = viewModel.courseAuthor
@@ -53,6 +48,7 @@ extension CourseCell {
         courseMainImage.makeRoundCorners(byRadius: 20)
         
     }
+        
 }
 
 
