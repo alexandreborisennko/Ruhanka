@@ -22,6 +22,8 @@
 		044121F12A5F271B00039C77 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F02A5F271B00039C77 /* Constants.swift */; };
 		044121F52A5F3E8300039C77 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F32A5F3E8300039C77 /* CourseCell.swift */; };
 		044121F62A5F3E8300039C77 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044121F42A5F3E8300039C77 /* CourseCell.xib */; };
+		044B12A32AAF43C600BC1FAC /* CourseMainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B12A22AAF43C500BC1FAC /* CourseMainPageViewModel.swift */; };
+		044B12A52AAF43F600BC1FAC /* CourseMainPageViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B12A42AAF43F600BC1FAC /* CourseMainPageViewModelType.swift */; };
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 		046A737F2A7AD89200B90024 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A737E2A7AD89200B90024 /* ExtensionFile.swift */; };
 		046A73852A83EFCF00B90024 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A73842A83EFCF00B90024 /* LogInModel.swift */; };
@@ -59,6 +61,8 @@
 		044121F02A5F271B00039C77 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		044121F32A5F3E8300039C77 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		044121F42A5F3E8300039C77 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
+		044B12A22AAF43C500BC1FAC /* CourseMainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMainPageViewModel.swift; sourceTree = "<group>"; };
+		044B12A42AAF43F600BC1FAC /* CourseMainPageViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMainPageViewModelType.swift; sourceTree = "<group>"; };
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 		046A737E2A7AD89200B90024 /* ExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
 		046A73842A83EFCF00B90024 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				046A73862A84189D00B90024 /* AvailableCoursesViewModel.swift */,
 				04EA18682AA877F90009719E /* PartofCourseViewModel.swift */,
+				044B12A22AAF43C500BC1FAC /* CourseMainPageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				04DC755C2A988556008F07E2 /* AvailableCoursesViewModelType.swift */,
 				04EA186A2AA878150009719E /* PartofCourseViewModelType.swift */,
 				04EA186C2AA881240009719E /* CellFieldsModelType.swift */,
+				044B12A42AAF43F600BC1FAC /* CourseMainPageViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044121F52A5F3E8300039C77 /* CourseCell.swift in Sources */,
+				044B12A32AAF43C600BC1FAC /* CourseMainPageViewModel.swift in Sources */,
 				044121D92A57218800039C77 /* EmailRegistrationModel.swift in Sources */,
 				044121F12A5F271B00039C77 /* Constants.swift in Sources */,
 				044121DD2A582EA500039C77 /* AvailableCoursesVC.swift in Sources */,
@@ -350,6 +357,7 @@
 				0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */,
 				04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */,
 				041E92052A54388A00233723 /* Ruhanka.xcdatamodeld in Sources */,
+				044B12A52AAF43F600BC1FAC /* CourseMainPageViewModelType.swift in Sources */,
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,
 				044121ED2A5F172B00039C77 /* CourseData.swift in Sources */,
 				046A73852A83EFCF00B90024 /* LogInModel.swift in Sources */,

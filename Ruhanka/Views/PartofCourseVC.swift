@@ -71,8 +71,8 @@ extension PartOfCourseVC: UITableViewDelegate {
         if let vc = storyboard.instantiateViewController(withIdentifier: CourseMainPageVC.identifier) as? CourseMainPageVC {
                     guard let indexPath = tableView.indexPathForSelectedRow ,
                           let course = viewModel?.getCurrentCourse(forIndexPath: indexPath) else { return  }
-                    vc.setCourse(for: course)
-            
+        
+            vc.viewModel?.setCourseLabels(for: course)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

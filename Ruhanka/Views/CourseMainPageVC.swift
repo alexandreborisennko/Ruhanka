@@ -10,19 +10,10 @@ import UIKit
 
 class CourseMainPageVC: UIViewController {
 
-        var selectedButtonBar: UIView?
-        var courseTraining: [CoursePartBlock] = []
-        var courseImage : UIImage?
-       var courseTitle: String?
-       var courseAuthor: String?
-       var courseLength: String?
-       var courseLevel: String?
-       var courseType: String?
-       var coursePart : String?
-       var courseDescription: String?
-    
+    var selectedButtonBar: UIView?
+    var viewModel: CourseMainPageViewModelType? = CourseMainPageViewModel()
+        
     @IBOutlet weak var containerTraining: UIView!
-    
     
     @IBOutlet weak var topHeaderOutlet: UILabel!
     @IBOutlet weak var mainBottomButton: BottomButton!
@@ -50,11 +41,12 @@ class CourseMainPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setCourse()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let childVC = segue.destination as? TrainingTableVC {
-                childVC.courseTraining = courseTraining
+            if let childVC = segue.destination as? TrainingTableVC, let viewModel = viewModel {
+                childVC.courseTraining = viewModel.courseTraining
             }
         }
     
@@ -104,38 +96,6 @@ class CourseMainPageVC: UIViewController {
         sender.isSelected = true
     }
     
-    func setCourse(for course: CoursePart) {
-
-        courseImage = course.coursePartImage
-        courseTitle = "\(course.courseTitle)."
-        coursePart = course.coursePart
-        courseAuthor = course.courseAuthor
-        courseLength   = "·   \(course.coursePartLength)"
-        courseLevel = ""
-        for (index,element) in course.courseLevel.enumerated() {
-            courseLevel! += "\(element.level) "
-            if index+1 < course.courseLevel.count {
-                courseLevel! += "/ "
-            } else {
-                courseLevel! += "  "
-            }
-        }
-       
-        courseType = ""
-        for (index, element) in course.courseType.enumerated() {
-            courseType! += "\(element.type)  "
-            if index+1 < course.courseType.count {
-                courseType! += "·  "
-            }
-        }
-      
-        
-        
-        courseDescription = course.coursePartDescription
-        
-        courseTraining = course.courseTrainings
-        
-    }
 }
 
 
@@ -149,11 +109,11 @@ class BottomButton: UIButton  {
 
 
 
-//MARK: -  SetUI
-
 
 extension CourseMainPageVC {
     
+    //MARK: -  SetUI
+
     private func setUI(){
         mainBottomButton.setImage(#imageLiteral(resourceName: "homePressed"), for: .selected)
         yogaBottomButton.setImage(#imageLiteral(resourceName: "yogaPressed"), for: .selected)
@@ -167,17 +127,8 @@ extension CourseMainPageVC {
         herbsBottomButton.setImage(#imageLiteral(resourceName: "herbs"), for: .normal)
         socialBottomButtom.setImage(#imageLiteral(resourceName: "social"), for: .normal)
         
-        topImage.image = courseImage
-        topTitle.text = courseTitle
-        topPartTitle.text = coursePart
-        topDescription.text = courseDescription
-        topAuthor.text = courseAuthor
-        topLength.text = courseLength
-        topLevel.text = courseLevel
-        topType.text = courseType
+       
         
-
-
         hideButtonOutlet.setTitle("Сховати деталі програми", for: .normal)
         hideButtonOutlet.setImage(UIImage(systemName: "arrow.up"), for: .normal)
         hideButtonOutlet.setTitle("Відкрити деталі програми", for: .selected)
@@ -188,9 +139,22 @@ extension CourseMainPageVC {
         let range = NSRange(location: 0, length: topHeaderText.count)
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
         topHeaderOutlet.attributedText = attributedString
-        
 
         selectButton(for: trainingOutlet, deselectButtons: [faceCareOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+    }
+    
+    
+    //MARK: -  setCourse
+
+    private func setCourse() {
+        topTitle.text = viewModel?.courseTitle
+        topImage.image = viewModel?.courseImage
+        topPartTitle.text = viewModel?.coursePart
+        topDescription.text = viewModel?.courseDescription
+        topAuthor.text = viewModel?.courseAuthor
+        topLength.text = viewModel?.courseLength
+        topLevel.text = viewModel?.courseLevel
+        topType.text = viewModel?.courseType
     }
 }
 

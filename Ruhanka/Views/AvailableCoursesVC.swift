@@ -92,7 +92,6 @@ extension AvailableCoursesVC: UITableViewDataSource {
         }
         viewModel.setCellLabels(forIndexPath: indexPath)
         cell.setCell(withViewModel: viewModel)
-
         return cell
     }
     
@@ -112,8 +111,7 @@ extension AvailableCoursesVC: UITableViewDelegate {
                 guard let viewModel = viewModel  else { return  }
                 let courseTitle = viewModel.getCurrentCourse(forIndexPath: indexPath).courseTitle
                 vc.courseTitle = courseTitle
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+                self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 
