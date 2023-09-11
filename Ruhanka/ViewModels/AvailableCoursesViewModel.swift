@@ -18,7 +18,6 @@ class AvailableCoursesViewModel: AvailableCoursesViewModelType, CellFieldsModelT
         delegate?.didChangeBackgroundColor(backgroundColor)
     }
     
-    
         var numberOfRows: Int {
         return filteredCourses.count
     }

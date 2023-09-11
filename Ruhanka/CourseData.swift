@@ -26,7 +26,7 @@ import UIKit
         }
     
     }
-
+/* test course trainings */
 let marafonNog1PartTrainging1  = CoursePartBlock(blockImage: UIImage(named: "training1")!, blockTag: "Розтяжка", blockName: "Тренування №1")
 let marafonNog1PartTrainging2  = CoursePartBlock(blockImage: UIImage(named: "training2")!, blockTag: "Спина", blockName: "Тренування №2")
 let marafonNog1PartTrainging3  = CoursePartBlock(blockImage: UIImage(named: "training3")!, blockTag: "Прес та сідниця", blockName: "Тренування №3")
@@ -35,16 +35,30 @@ let marafonNog1PartTrainging5  = CoursePartBlock(blockImage: UIImage(named: "tra
 let marafonNog1PartTrainging6  = CoursePartBlock(blockImage: UIImage(named: "training6")!, blockTag: "Ноги", blockName: "Тренування №6")
 
 
+
+/* test course face cares */
+
+let marafonNog1PartFaceCare1 = CoursePartBlock(blockImage: UIImage(named: "facecare1")!, blockTag: "Антізморшки", blockName: "Тренування №1")
+let marafonNog1PartFaceCare2 = CoursePartBlock(blockImage: UIImage(named: "facecare2")!, blockTag: "Боротьба з вугрями", blockName: "Тренування №2")
+let marafonNog1PartFaceCare3 = CoursePartBlock(blockImage: UIImage(named: "facecare3")!, blockTag: "Масаж щок", blockName: "Тренування №3")
+let marafonNog1PartFaceCare4 = CoursePartBlock(blockImage: UIImage(named: "facecare4")!, blockTag: "Збільшуем розріз очей", blockName: "Тренування №4")
+
+
+
+
 let myCourseParts =  [
     CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 1 ", coursePartImage: #imageLiteral(resourceName: "course1_1"), coursePartLength: "10 днів", coursePartDescriprtion: """
                В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів.
                
                Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!
-               """, courseTrainings: [marafonNog1PartTrainging1,marafonNog1PartTrainging2,marafonNog1PartTrainging3,marafonNog1PartTrainging4,marafonNog1PartTrainging5,marafonNog1PartTrainging6]),
+               """, courseTrainings: [marafonNog1PartTrainging1,marafonNog1PartTrainging2,marafonNog1PartTrainging3,marafonNog1PartTrainging4,marafonNog1PartTrainging5,marafonNog1PartTrainging6],
+              courseFaceCares: [marafonNog1PartFaceCare1,marafonNog1PartFaceCare2,marafonNog1PartFaceCare3,marafonNog1PartFaceCare4]),
     
-    CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів",  coursePartDescriprtion: "В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів. Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!", courseTrainings: [marafonNog1PartTrainging1,marafonNog1PartTrainging2,marafonNog1PartTrainging3]),
+    CoursePart(course: AvailableCourses.marafonNog, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів",  coursePartDescriprtion: "В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів. Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!", courseTrainings: [marafonNog1PartTrainging1,marafonNog1PartTrainging2,marafonNog1PartTrainging3],
+              courseFaceCares: [marafonNog1PartFaceCare1,marafonNog1PartFaceCare2,marafonNog1PartFaceCare3,marafonNog1PartFaceCare4]),
     
-    CoursePart(course: AvailableCourses.MarafonPlechey.main, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів",  coursePartDescriprtion: "В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів. Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!", courseTrainings: [marafonNog1PartTrainging1,marafonNog1PartTrainging2,marafonNog1PartTrainging3])
+    CoursePart(course: AvailableCourses.MarafonPlechey.main, coursePart: "Частина 2", coursePartImage: #imageLiteral(resourceName: "course1_2"), coursePartLength: "12 днів",  coursePartDescriprtion: "В цьому курсі вас чекає треннування пресу та сідниці. На все про все вам дається 10 днів. Для тренування потрібні будуть мячик, валік та ремін від халату. Також ви пройдете курс лікування травами, а бонусом отримаєте нове гарне обличчя абсолютно без зусіль. Тож почнемо!", courseTrainings: [marafonNog1PartTrainging1,marafonNog1PartTrainging2,marafonNog1PartTrainging3],
+               courseFaceCares: [marafonNog1PartFaceCare1,marafonNog1PartFaceCare2,marafonNog1PartFaceCare3,marafonNog1PartFaceCare4])
     
 ]
 

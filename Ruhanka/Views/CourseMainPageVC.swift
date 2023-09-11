@@ -8,13 +8,18 @@
 import UIKit
 
 
-class CourseMainPageVC: UIViewController {
+protocol CourseMainViewModelDelegate: AnyObject {
+    var whatTableToShow : Int {get set}
+}
+
+class CourseMainPageVC: UIViewController, CourseMainViewModelDelegate {
 
     var selectedButtonBar: UIView?
     var viewModel: CourseMainPageViewModelType? = CourseMainPageViewModel()
+    var whatTableToShow: Int = 1
         
     @IBOutlet weak var containerTraining: UIView!
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topHeaderOutlet: UILabel!
     @IBOutlet weak var mainBottomButton: BottomButton!
     @IBOutlet weak var yogaBottomButton: UIButton!
@@ -42,24 +47,37 @@ class CourseMainPageVC: UIViewController {
         super.viewDidLoad()
         setUI()
         setCourse()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(MainCell.nib(), forCellReuseIdentifier: MainCell.identifier)
+        viewModel?.delegate = self
+        viewModel?.getNumberOfRows(selectedButton: whatTableToShow)
+
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let childVC = segue.destination as? TrainingTableVC, let viewModel = viewModel {
-                childVC.courseTraining = viewModel.courseTraining
-            }
-        }
     
-    @IBAction func TrainingButton(_ sender: UIButton) {
+    @IBAction func trainingButton(_ sender: UIButton) {
         selectButton(for: trainingOutlet, deselectButtons: [faceCareOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+        whatTableToShow = 1 
+        viewModel?.getNumberOfRows(selectedButton: whatTableToShow)
+        tableView.reloadData()
 
     }
     
     @IBAction func faceCareButton(_ sender: UIButton) {
         selectButton(for: faceCareOutlet, deselectButtons: [trainingOutlet,favoriteOutlet], selectedButtonBar: &selectedButtonBar)
+        whatTableToShow = 2
+        viewModel?.getNumberOfRows(selectedButton: whatTableToShow)
+        tableView.reloadData()
+
     }
     @IBAction func favoriteButton(_ sender: UIButton) {
         selectButton(for: favoriteOutlet, deselectButtons: [trainingOutlet,faceCareOutlet], selectedButtonBar: &selectedButtonBar)
+        whatTableToShow = 3
+        viewModel?.getNumberOfRows(selectedButton: whatTableToShow)
+        tableView.reloadData()
+
     }
     
     @IBAction func hideDescription(_ sender: UIButton) {
@@ -75,10 +93,9 @@ class CourseMainPageVC: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
+    
     @IBAction func mainBottomButtonPressed(_ sender: BottomButton) {
-
         sender.isSelected = true
-        
     }
     
     @IBAction func yogaBottomButtonPressed(_ sender: UIButton) {
@@ -156,6 +173,29 @@ extension CourseMainPageVC {
         topLevel.text = viewModel?.courseLevel
         topType.text = viewModel?.courseType
     }
+}
+
+extension CourseMainPageVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  viewModel?.numberOfRows ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: MainCell.identifier, for: indexPath) as? MainCell, let viewModel = viewModel   else {return UITableViewCell()}
+        
+        viewModel.setCellLabels(forIndexPath: indexPath)
+        cell.setCell(withViewModel: viewModel)
+        return cell
+    }
+}
+
+
+
+extension CourseMainPageVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
 }
 
 

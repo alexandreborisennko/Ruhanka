@@ -9,7 +9,11 @@ import UIKit
 
 protocol CourseMainPageViewModelType {
     
-    var courseTraining: [CoursePartBlock]  {get}
+    var delegate: CourseMainViewModelDelegate? {get set}
+    var courseTrainings: [CoursePartBlock]  {get}
+    var courseFaceCares: [CoursePartBlock]  {get}
+    var numberOfRows: Int {get}
+    
     var courseImage : UIImage? {get}
     var courseTitle: String? {get}
     var courseAuthor: String? {get}
@@ -19,5 +23,12 @@ protocol CourseMainPageViewModelType {
     var coursePart : String? {get}
     var courseDescription: String? {get}
     
+    
+    var mainTag: String? {get}
+    var mainName : String? {get}
+    var mainImage: UIImage? {get}
+    
     func setCourseLabels(for course: CoursePart)
+    func getNumberOfRows(selectedButton: Int)
+    func setCellLabels(forIndexPath indexPath: IndexPath)
 }

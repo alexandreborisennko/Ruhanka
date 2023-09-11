@@ -23,10 +23,19 @@ class MainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    
 }
 
 extension MainCell {
     static func nib() -> UINib {
         return UINib(nibName: "MainCell", bundle: nil)
+    }
+    
+    public func setCell(withViewModel viewModel: CourseMainPageViewModelType) {
+        mainTag.text = viewModel.mainTag
+        mainName.text = viewModel.mainName
+        mainImage.image = viewModel.mainImage
+        mainImage.makeRoundCorners(byRadius: 20)
     }
 }

@@ -7,7 +7,17 @@
 
 import UIKit
 
+
+
 class CourseMainPageViewModel: CourseMainPageViewModelType {
+    
+    weak var delegate: CourseMainViewModelDelegate?
+    
+    var mainTag: String?
+    var mainName: String?
+    var mainImage: UIImage?
+    
+    var numberOfRows: Int = 0
     var courseImage: UIImage?
     var courseTitle: String?
     var courseAuthor: String?
@@ -16,7 +26,8 @@ class CourseMainPageViewModel: CourseMainPageViewModelType {
     var courseType: String?
     var coursePart: String?
     var courseDescription: String?
-    var courseTraining: [CoursePartBlock] = []
+    var courseTrainings: [CoursePartBlock] = []
+    var courseFaceCares: [CoursePartBlock] = []
     
     func setCourseLabels(for course: CoursePart) {
         courseImage = course.coursePartImage
@@ -43,7 +54,36 @@ class CourseMainPageViewModel: CourseMainPageViewModelType {
         }
       
         courseDescription = course.coursePartDescription
-        courseTraining = course.courseTrainings
+        courseTrainings = course.courseTrainings
+        courseFaceCares = course.courseFaceCares
+        
+    }
+    
+    func getNumberOfRows(selectedButton: Int) {
+   
+        if selectedButton == 1 {
+            numberOfRows = courseTrainings.count
+        }
+        if selectedButton == 2 {
+            numberOfRows = courseFaceCares.count
+        }
+    }
+    
+    func setCellLabels(forIndexPath indexPath: IndexPath) {
+        
+        if delegate?.whatTableToShow  == 1
+        {
+            mainTag = courseTrainings[indexPath.row].blockTag
+            mainName = courseTrainings[indexPath.row].blockName
+            mainImage = courseTrainings[indexPath.row].blockImage
+        }
+        
+        if delegate?.whatTableToShow  == 2
+        {
+            mainTag = courseFaceCares[indexPath.row].blockTag
+            mainName = courseFaceCares[indexPath.row].blockName
+            mainImage = courseFaceCares[indexPath.row].blockImage
+        }
     }
    
 }

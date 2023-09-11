@@ -669,18 +669,6 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WW0-5E-jVr" userLabel="Container View - Training">
-                                <rect key="frame" x="0.0" y="563.66666666666663" width="396" height="204.33333333333337"/>
-                                <connections>
-                                    <segue destination="Mg5-P0-Rao" kind="embed" identifier="CourseMainPageToTraining" id="n7C-TJ-VnQ"/>
-                                </connections>
-                            </containerView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vi-rm-sFk" userLabel="Container View - FaceCare">
-                                <rect key="frame" x="0.0" y="563.66666666666663" width="396" height="204.33333333333337"/>
-                                <connections>
-                                    <segue destination="HqF-nR-enn" kind="embed" id="VuI-Dm-cRH"/>
-                                </connections>
-                            </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jkR-tI-pBp" userLabel="bottomMenu">
                                 <rect key="frame" x="10" y="768" width="366" height="50"/>
                                 <subviews>
@@ -890,7 +878,7 @@
                                                             <color key="titleColor" systemColor="labelColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="TrainingButton:" destination="LwT-Le-6i1" eventType="touchUpInside" id="gJo-2h-Y7s"/>
+                                                            <action selector="trainingButton:" destination="LwT-Le-6i1" eventType="touchUpInside" id="gJo-2h-Y7s"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flu-Yp-V62">
@@ -938,43 +926,38 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="88Q-ZB-ZkL">
+                                <rect key="frame" x="16" y="568.66666666666663" width="364" height="199.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QXD-zB-iZv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7Vi-rm-sFk" firstAttribute="leading" secondItem="Cph-IR-IDN" secondAttribute="leading" id="42v-99-vj9"/>
-                            <constraint firstItem="WW0-5E-jVr" firstAttribute="leading" secondItem="Cph-IR-IDN" secondAttribute="leading" id="Axr-hN-Yr0"/>
+                            <constraint firstItem="88Q-ZB-ZkL" firstAttribute="top" secondItem="dll-Zy-Hla" secondAttribute="bottom" constant="25" id="1uI-uh-NjR"/>
                             <constraint firstItem="dll-Zy-Hla" firstAttribute="top" secondItem="hbA-Lb-sKn" secondAttribute="bottom" constant="20" id="Djv-3b-Ls0"/>
                             <constraint firstItem="jkR-tI-pBp" firstAttribute="leading" secondItem="QXD-zB-iZv" secondAttribute="leading" constant="10" id="FrO-Nr-W2h"/>
                             <constraint firstAttribute="trailing" secondItem="dll-Zy-Hla" secondAttribute="trailing" constant="15" id="Ibe-LT-mEH"/>
+                            <constraint firstItem="QXD-zB-iZv" firstAttribute="bottom" secondItem="88Q-ZB-ZkL" secondAttribute="bottom" constant="50" id="K7j-Xp-5DZ"/>
                             <constraint firstItem="dll-Zy-Hla" firstAttribute="leading" secondItem="Cph-IR-IDN" secondAttribute="leading" constant="15" id="L0C-BV-2nr"/>
+                            <constraint firstItem="88Q-ZB-ZkL" firstAttribute="leading" secondItem="Cph-IR-IDN" secondAttribute="leadingMargin" id="Ly4-AJ-iNi"/>
+                            <constraint firstItem="88Q-ZB-ZkL" firstAttribute="trailing" secondItem="Cph-IR-IDN" secondAttribute="trailingMargin" id="P1L-W3-fag"/>
                             <constraint firstItem="hbA-Lb-sKn" firstAttribute="leading" secondItem="QXD-zB-iZv" secondAttribute="leading" id="Qqe-pe-F5I"/>
-                            <constraint firstAttribute="trailing" secondItem="WW0-5E-jVr" secondAttribute="trailing" id="Sm1-TJ-Qq2"/>
                             <constraint firstItem="hbA-Lb-sKn" firstAttribute="top" secondItem="Cph-IR-IDN" secondAttribute="top" id="ZIW-Yt-Juz"/>
-                            <constraint firstItem="WW0-5E-jVr" firstAttribute="top" secondItem="dll-Zy-Hla" secondAttribute="bottom" constant="20" id="eTX-Gj-OFW"/>
-                            <constraint firstAttribute="trailing" secondItem="7Vi-rm-sFk" secondAttribute="trailing" id="jNx-HZ-22V"/>
-                            <constraint firstItem="7Vi-rm-sFk" firstAttribute="top" secondItem="dll-Zy-Hla" secondAttribute="bottom" constant="20" id="otg-xr-nBP"/>
                             <constraint firstItem="QXD-zB-iZv" firstAttribute="trailing" secondItem="hbA-Lb-sKn" secondAttribute="trailing" id="pC8-p4-0TD"/>
-                            <constraint firstItem="WW0-5E-jVr" firstAttribute="bottom" secondItem="jkR-tI-pBp" secondAttribute="top" id="pe6-f4-5E8"/>
                             <constraint firstAttribute="trailing" secondItem="jkR-tI-pBp" secondAttribute="trailing" constant="20" id="phn-7U-p3w"/>
                             <constraint firstItem="jkR-tI-pBp" firstAttribute="bottom" secondItem="QXD-zB-iZv" secondAttribute="bottom" id="yRM-CD-84D"/>
-                            <constraint firstItem="jkR-tI-pBp" firstAttribute="top" secondItem="7Vi-rm-sFk" secondAttribute="bottom" id="zxn-Cm-X2u"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="7Vi-rm-sFk"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" style="browser" id="Qti-PW-dnO"/>
                     <connections>
-                        <outlet property="containerTraining" destination="WW0-5E-jVr" id="Wf7-Zk-PTP"/>
                         <outlet property="faceCareOutlet" destination="flu-Yp-V62" id="uNk-UY-MBe"/>
                         <outlet property="favoriteOutlet" destination="NWh-eE-Tdj" id="gsl-pt-xA9"/>
                         <outlet property="herbsBottomButton" destination="DgO-bA-QlF" id="pGR-YB-RqY"/>
                         <outlet property="hideButtonOutlet" destination="3mH-nC-o8F" id="QLW-Ot-c04"/>
                         <outlet property="mainBottomButton" destination="RLR-hb-PDF" id="GGS-s6-VRu"/>
                         <outlet property="socialBottomButtom" destination="IKT-yY-ktJ" id="nGG-4U-82O"/>
+                        <outlet property="tableView" destination="88Q-ZB-ZkL" id="c6S-iL-yEd"/>
                         <outlet property="topAuthor" destination="vmS-kO-eYU" id="CZn-53-toT"/>
                         <outlet property="topDescription" destination="Uz0-ru-pOT" id="WRm-Wz-dUd"/>
                         <outlet property="topHeaderOutlet" destination="diH-7A-n7j" id="Nme-ch-gSp"/>
@@ -994,64 +977,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gs4-3l-fvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3904.5801526717555" y="12.67605633802817"/>
-        </scene>
-        <!--Training TableVC-->
-        <scene sceneID="Zcf-0c-SFb">
-            <objects>
-                <viewController id="Mg5-P0-Rao" customClass="TrainingTableVC" customModule="Ruhanka" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mxv-VR-cCp">
-                        <rect key="frame" x="0.0" y="0.0" width="396" height="204.33333333333334"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c70-Zu-cKj">
-                                <rect key="frame" x="0.0" y="0.0" width="396" height="204.33333333333334"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" systemColor="systemGray4Color"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QIP-YD-6YR"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="c70-Zu-cKj" secondAttribute="trailing" id="7I7-c0-Wdh"/>
-                            <constraint firstItem="c70-Zu-cKj" firstAttribute="leading" secondItem="mxv-VR-cCp" secondAttribute="leading" id="I2C-1s-tg4"/>
-                            <constraint firstAttribute="bottom" secondItem="c70-Zu-cKj" secondAttribute="bottom" id="W7f-94-4le"/>
-                            <constraint firstItem="c70-Zu-cKj" firstAttribute="top" secondItem="mxv-VR-cCp" secondAttribute="top" id="oiH-e3-ssx"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="c70-Zu-cKj" id="Zt8-bG-SnE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="baV-9n-GPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4811" y="190"/>
-        </scene>
-        <!--Face Care TableVC-->
-        <scene sceneID="M0w-C5-L3N">
-            <objects>
-                <viewController id="HqF-nR-enn" customClass="FaceCareTableVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n1x-9w-7Cp">
-                        <rect key="frame" x="0.0" y="0.0" width="396" height="204.33333333333334"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Ql-0x-uph">
-                                <rect key="frame" x="0.0" y="0.0" width="396" height="204.33333333333334"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mvt-iU-qPX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3Ql-0x-uph" secondAttribute="trailing" id="Ff4-kU-gk7"/>
-                            <constraint firstItem="3Ql-0x-uph" firstAttribute="leading" secondItem="n1x-9w-7Cp" secondAttribute="leading" id="UAK-OE-8GK"/>
-                            <constraint firstItem="3Ql-0x-uph" firstAttribute="top" secondItem="n1x-9w-7Cp" secondAttribute="top" id="bbg-0I-0Zl"/>
-                            <constraint firstAttribute="bottom" secondItem="3Ql-0x-uph" secondAttribute="bottom" id="pCD-ZA-bPc"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5gN-xW-R5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4813" y="-9"/>
         </scene>
     </scenes>
     <designables>
@@ -1092,9 +1017,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
