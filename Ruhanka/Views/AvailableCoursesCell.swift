@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CourseCell: UITableViewCell {
+class AvailableCoursesCell: UICollectionViewCell {
     
     @IBOutlet weak var courseType: UILabel!
     @IBOutlet weak var courseLevel: UILabel!
@@ -21,17 +21,13 @@ class CourseCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     
 }
 
 //MARK: -  SetCell
 
-extension CourseCell {
+extension AvailableCoursesCell {
     
     static func nib() -> UINib{
         return UINib(nibName: "CourseCell", bundle: nil)
