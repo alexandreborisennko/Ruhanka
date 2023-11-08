@@ -19,7 +19,7 @@ class PartOfCourseVC: UIViewController, CreateAlert {
         viewModel = PartofCourseViewModel()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(CourseCell.nib(), forCellReuseIdentifier: CourseCell.identifier)
+        tableView.register(PartOfCourceCell.nib(), forCellReuseIdentifier: PartOfCourceCell.identifier)
         viewModel?.filterPartOfCourse(title: courseTitle)
         
     }
@@ -45,14 +45,13 @@ extension PartOfCourseVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CourseCell.identifier, for: indexPath) as? CourseCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PartOfCourceCell.identifier, for: indexPath) as? PartOfCourceCell,
               let viewModel = viewModel else {
             return UITableViewCell()
         }
         
         viewModel.setCellLabels(forIndexPath: indexPath)
-       
-        cell.setCell(withViewModel: viewModel)
+      	cell.setCell(withViewModel: viewModel)
            
         return cell
     }
@@ -63,9 +62,7 @@ extension PartOfCourseVC: UITableViewDataSource {
 //MARK: -  Extension UITableViewDelegate
 
 extension PartOfCourseVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //tells the delegate that the current row is selected
-        
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: CourseMainPageVC.identifier) as? CourseMainPageVC {

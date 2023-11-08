@@ -6,32 +6,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="375" id="KGk-i7-Jjw" customClass="CourseCell" customModule="Ruhanka" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="382" height="375"/>
+        <collectionViewCell contentMode="scaleToFill" reuseIdentifier="AvailableCoursesCell" id="KGk-i7-Jjw" customClass="AvailableCoursesCell" customModule="Ruhanka" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="350"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" userLabel="View">
-                <rect key="frame" x="0.0" y="0.0" width="382" height="375"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="H2p-sc-9uM" userLabel="View">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="350"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZa-yr-hnB" userLabel="ячейка">
-                        <rect key="frame" x="0.0" y="11" width="382" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="350"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7lm-dY-Ps3" userLabel="Stack View for Image">
-                                <rect key="frame" x="10" y="0.0" width="362" height="250"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aeB-Sw-BP1">
-                                        <rect key="frame" x="0.0" y="0.0" width="362" height="250"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="vJC-VZ-aH8"/>
-                                </constraints>
-                            </stackView>
                             <stackView opaque="NO" contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-Po-bdo" userLabel="Stack View Level&amp;Type">
                                 <rect key="frame" x="10" y="270" width="68.666666666666671" height="16.333333333333314"/>
                                 <subviews>
@@ -85,24 +75,36 @@
                             <constraint firstAttribute="height" constant="350" id="0HO-cI-g6r"/>
                             <constraint firstItem="uHx-fV-IjK" firstAttribute="top" secondItem="w7w-Po-bdo" secondAttribute="bottom" id="86o-Wr-sUk"/>
                             <constraint firstItem="05O-Ps-iix" firstAttribute="top" secondItem="uHx-fV-IjK" secondAttribute="bottom" id="Afp-bo-vrk"/>
-                            <constraint firstItem="7lm-dY-Ps3" firstAttribute="leading" secondItem="BZa-yr-hnB" secondAttribute="leading" constant="10" id="O47-6e-ShF"/>
                             <constraint firstItem="05O-Ps-iix" firstAttribute="leading" secondItem="BZa-yr-hnB" secondAttribute="leading" constant="10" id="T2c-ZH-ksT"/>
                             <constraint firstItem="w7w-Po-bdo" firstAttribute="leading" secondItem="BZa-yr-hnB" secondAttribute="leading" constant="10" id="Tea-CV-QqL"/>
                             <constraint firstItem="uHx-fV-IjK" firstAttribute="leading" secondItem="BZa-yr-hnB" secondAttribute="leading" constant="10" id="kGy-Mz-uP3"/>
-                            <constraint firstItem="7lm-dY-Ps3" firstAttribute="top" secondItem="BZa-yr-hnB" secondAttribute="top" id="o7c-8g-dxg"/>
-                            <constraint firstAttribute="trailing" secondItem="7lm-dY-Ps3" secondAttribute="trailing" constant="10" id="sPO-vy-Uf3"/>
-                            <constraint firstItem="w7w-Po-bdo" firstAttribute="top" secondItem="7lm-dY-Ps3" secondAttribute="bottom" constant="20" id="vX9-TH-2Ja"/>
                         </constraints>
                     </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7lm-dY-Ps3" userLabel="Stack View for Image">
+                        <rect key="frame" x="10" y="0.0" width="352" height="250"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aeB-Sw-BP1">
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="250"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="250" id="vJC-VZ-aH8"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7lm-dY-Ps3" secondAttribute="trailing" constant="10" id="ZKl-Fm-5Cr"/>
                     <constraint firstAttribute="trailing" secondItem="BZa-yr-hnB" secondAttribute="trailing" id="dCd-9a-wCP"/>
-                    <constraint firstItem="BZa-yr-hnB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hVg-vB-JwU"/>
+                    <constraint firstItem="7lm-dY-Ps3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nTa-QA-pbS"/>
+                    <constraint firstItem="BZa-yr-hnB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vND-ja-bG2"/>
                     <constraint firstAttribute="height" constant="350" id="wOa-Qy-IS5"/>
+                    <constraint firstItem="w7w-Po-bdo" firstAttribute="top" secondItem="7lm-dY-Ps3" secondAttribute="bottom" constant="20" id="y4X-Jn-sct"/>
+                    <constraint firstItem="7lm-dY-Ps3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yfk-fM-V1R"/>
                     <constraint firstItem="BZa-yr-hnB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zKB-rO-3PY"/>
                 </constraints>
-            </tableViewCellContentView>
+            </collectionViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <size key="customSize" width="372" height="350"/>
             <connections>
                 <outlet property="courseAuthor" destination="tEe-as-CeF" id="D6f-Wz-15z"/>
                 <outlet property="courseLength" destination="uAu-dS-6TM" id="VZx-QE-MGr"/>
@@ -112,8 +114,8 @@
                 <outlet property="courseType" destination="Fok-f1-pnA" id="aT5-fk-xDF"/>
                 <outlet property="stackView" destination="05O-Ps-iix" id="vuy-T4-dw0"/>
             </connections>
-            <point key="canvasLocation" x="-12.213740458015266" y="108.09859154929578"/>
-        </tableViewCell>
+            <point key="canvasLocation" x="-19.847328244274809" y="-44.366197183098592"/>
+        </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="Dark Grey">

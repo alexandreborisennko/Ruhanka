@@ -20,14 +20,15 @@
 		044121ED2A5F172B00039C77 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121EC2A5F172B00039C77 /* CourseData.swift */; };
 		044121EF2A5F19DB00039C77 /* AvailableCoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121EE2A5F19DB00039C77 /* AvailableCoursesModel.swift */; };
 		044121F12A5F271B00039C77 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F02A5F271B00039C77 /* Constants.swift */; };
-		044121F52A5F3E8300039C77 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F32A5F3E8300039C77 /* CourseCell.swift */; };
-		044121F62A5F3E8300039C77 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044121F42A5F3E8300039C77 /* CourseCell.xib */; };
+		044121F52A5F3E8300039C77 /* AvailableCoursesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044121F32A5F3E8300039C77 /* AvailableCoursesCell.swift */; };
+		044121F62A5F3E8300039C77 /* AvailableCoursesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044121F42A5F3E8300039C77 /* AvailableCoursesCell.xib */; };
 		044B12A32AAF43C600BC1FAC /* CourseMainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B12A22AAF43C500BC1FAC /* CourseMainPageViewModel.swift */; };
 		044B12A52AAF43F600BC1FAC /* CourseMainPageViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B12A42AAF43F600BC1FAC /* CourseMainPageViewModelType.swift */; };
 		04558DE62A55A2A60029EFF0 /* EmailRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */; };
 		046A737F2A7AD89200B90024 /* ExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A737E2A7AD89200B90024 /* ExtensionFile.swift */; };
 		046A73852A83EFCF00B90024 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A73842A83EFCF00B90024 /* LogInModel.swift */; };
 		046A73872A84189D00B90024 /* AvailableCoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A73862A84189D00B90024 /* AvailableCoursesViewModel.swift */; };
+		0476D3E62AF02AE200367F4A /* PartOfCourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476D3E42AF02AE200367F4A /* PartOfCourceCell.swift */; };
 		0477BDB32A5704AD00FA9D32 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477BDB22A5704AD00FA9D32 /* LogInVC.swift */; };
 		047AE2662A6817C1006C7902 /* CourseMainPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AE2652A6817C1006C7902 /* CourseMainPageVC.swift */; };
 		04AE595D2A652820004A00DA /* PartofCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE595C2A652820004A00DA /* PartofCourseVC.swift */; };
@@ -38,6 +39,7 @@
 		04EA18692AA877F90009719E /* PartofCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA18682AA877F90009719E /* PartofCourseViewModel.swift */; };
 		04EA186B2AA878150009719E /* PartofCourseViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA186A2AA878150009719E /* PartofCourseViewModelType.swift */; };
 		04EA186D2AA881240009719E /* CellFieldsModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA186C2AA881240009719E /* CellFieldsModelType.swift */; };
+		04FB2E312AF278ED007D6CFF /* PartOfCourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FB2E302AF278ED007D6CFF /* PartOfCourceCell.xib */; };
 		C53DBF182B6B079EFD4ED6BF /* Pods_Ruhanka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,14 +59,15 @@
 		044121EC2A5F172B00039C77 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		044121EE2A5F19DB00039C77 /* AvailableCoursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesModel.swift; sourceTree = "<group>"; };
 		044121F02A5F271B00039C77 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		044121F32A5F3E8300039C77 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
-		044121F42A5F3E8300039C77 /* CourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
+		044121F32A5F3E8300039C77 /* AvailableCoursesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesCell.swift; sourceTree = "<group>"; };
+		044121F42A5F3E8300039C77 /* AvailableCoursesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableCoursesCell.xib; sourceTree = "<group>"; };
 		044B12A22AAF43C500BC1FAC /* CourseMainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMainPageViewModel.swift; sourceTree = "<group>"; };
 		044B12A42AAF43F600BC1FAC /* CourseMainPageViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMainPageViewModelType.swift; sourceTree = "<group>"; };
 		04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegistrationVC.swift; sourceTree = "<group>"; };
 		046A737E2A7AD89200B90024 /* ExtensionFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFile.swift; sourceTree = "<group>"; };
 		046A73842A83EFCF00B90024 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		046A73862A84189D00B90024 /* AvailableCoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCoursesViewModel.swift; sourceTree = "<group>"; };
+		0476D3E42AF02AE200367F4A /* PartOfCourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfCourceCell.swift; sourceTree = "<group>"; };
 		0477BDB22A5704AD00FA9D32 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		047AE2652A6817C1006C7902 /* CourseMainPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMainPageVC.swift; sourceTree = "<group>"; };
 		04AE595C2A652820004A00DA /* PartofCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartofCourseVC.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		04EA18682AA877F90009719E /* PartofCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartofCourseViewModel.swift; sourceTree = "<group>"; };
 		04EA186A2AA878150009719E /* PartofCourseViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartofCourseViewModelType.swift; sourceTree = "<group>"; };
 		04EA186C2AA881240009719E /* CellFieldsModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFieldsModelType.swift; sourceTree = "<group>"; };
+		04FB2E302AF278ED007D6CFF /* PartOfCourceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartOfCourceCell.xib; sourceTree = "<group>"; };
 		3BE03EB784DD7D4647DB4971 /* Pods-Ruhanka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.release.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.release.xcconfig"; sourceTree = "<group>"; };
 		6BEA82482FA37DC90C74F7DE /* Pods-Ruhanka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ruhanka.debug.xcconfig"; path = "Target Support Files/Pods-Ruhanka/Pods-Ruhanka.debug.xcconfig"; sourceTree = "<group>"; };
 		88873940DABEEE958DF2B1E5 /* Pods_Ruhanka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ruhanka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,10 +141,11 @@
 				04558DE52A55A2A60029EFF0 /* EmailRegistrationVC.swift */,
 				0477BDB22A5704AD00FA9D32 /* LogInVC.swift */,
 				044121DC2A582EA500039C77 /* AvailableCoursesVC.swift */,
+				044121F32A5F3E8300039C77 /* AvailableCoursesCell.swift */,
 				04AE595C2A652820004A00DA /* PartofCourseVC.swift */,
-				044121F32A5F3E8300039C77 /* CourseCell.swift */,
-				04AEBA732A70579C00FDFD15 /* MainCell.swift */,
+				0476D3E42AF02AE200367F4A /* PartOfCourceCell.swift */,
 				047AE2652A6817C1006C7902 /* CourseMainPageVC.swift */,
+				04AEBA732A70579C00FDFD15 /* MainCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,7 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				041E92002A54388A00233723 /* Main.storyboard */,
-				044121F42A5F3E8300039C77 /* CourseCell.xib */,
+				044121F42A5F3E8300039C77 /* AvailableCoursesCell.xib */,
+				04FB2E302AF278ED007D6CFF /* PartOfCourceCell.xib */,
 				04AEBA742A70579C00FDFD15 /* MainCell.xib */,
 				041E92082A54388C00233723 /* LaunchScreen.storyboard */,
 			);
@@ -277,8 +283,9 @@
 				041E920A2A54388C00233723 /* LaunchScreen.storyboard in Resources */,
 				044121DB2A581A7D00039C77 /* GoogleService-Info.plist in Resources */,
 				04AEBA762A70579C00FDFD15 /* MainCell.xib in Resources */,
+				04FB2E312AF278ED007D6CFF /* PartOfCourceCell.xib in Resources */,
 				041E92072A54388C00233723 /* Assets.xcassets in Resources */,
-				044121F62A5F3E8300039C77 /* CourseCell.xib in Resources */,
+				044121F62A5F3E8300039C77 /* AvailableCoursesCell.xib in Resources */,
 				041E92022A54388A00233723 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044121F52A5F3E8300039C77 /* CourseCell.swift in Sources */,
+				044121F52A5F3E8300039C77 /* AvailableCoursesCell.swift in Sources */,
 				044B12A32AAF43C600BC1FAC /* CourseMainPageViewModel.swift in Sources */,
 				044121D92A57218800039C77 /* EmailRegistrationModel.swift in Sources */,
 				044121F12A5F271B00039C77 /* Constants.swift in Sources */,
@@ -353,6 +360,7 @@
 				041E91FD2A54388A00233723 /* SceneDelegate.swift in Sources */,
 				044121ED2A5F172B00039C77 /* CourseData.swift in Sources */,
 				046A73852A83EFCF00B90024 /* LogInModel.swift in Sources */,
+				0476D3E62AF02AE200367F4A /* PartOfCourceCell.swift in Sources */,
 				04AEBA752A70579C00FDFD15 /* MainCell.swift in Sources */,
 				04AE595D2A652820004A00DA /* PartofCourseVC.swift in Sources */,
 				04EA18692AA877F90009719E /* PartofCourseViewModel.swift in Sources */,
@@ -519,6 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LIBTOOLFLAGS = "\"-XCBuildForPre true\" \"-WLinkingC true\" \"-XCExpApple true\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oleksandrborysenko.Ruhanka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -550,6 +559,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LIBTOOLFLAGS = "\"-XCBuildForPre true\" \"-WLinkingC true\" \"-XCExpApple true\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oleksandrborysenko.Ruhanka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

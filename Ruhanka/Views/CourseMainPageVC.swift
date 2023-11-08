@@ -87,7 +87,7 @@ class CourseMainPageVC: UIViewController, CourseMainViewModelDelegate {
 
         } else {
             topOutlet.isHidden = true
-            topImageHeightConstant.constant = 0
+            topImageHeightConstant.constant = 120
             view.layoutIfNeeded()
         }
         sender.isSelected = !sender.isSelected

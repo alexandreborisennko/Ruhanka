@@ -30,7 +30,7 @@ class AvailableCoursesCell: UICollectionViewCell {
 extension AvailableCoursesCell {
     
     static func nib() -> UINib{
-        return UINib(nibName: "CourseCell", bundle: nil)
+        return UINib(nibName: "AvailableCoursesCell", bundle: nil)
     }
     
     public func setCell (withViewModel viewModel:  CellFieldsModelType) {
